@@ -5,7 +5,7 @@ var subTopic='' ;
 
 function button_connect(){
     clientID = document.getElementById("box_user_name").value;
-    host = 'g6db6412.us-east-1.emqx.cloud';
+    host = 'jeabd6a9.us-east-1.emqx.cloud';
     port = 8084;
 
     // Create a client instance
@@ -22,8 +22,8 @@ function button_connect(){
     // onFailure: onFailure,
     useSSL: true,
 
-    userName: 'IMPROTECH',
-    password: 'improtech2024',
+    userName: 'RTU2024',
+    password: 'IMPROTEK_RTU_2024',
     mqttVersion:4
     
   });
