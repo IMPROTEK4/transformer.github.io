@@ -533,7 +533,7 @@ function onMessageArrived(message) {
     document.getElementById('feeder14_phaseA').textContent = values[11] || '';
     document.getElementById('feeder14_phaseB').textContent = values[12] || '';
     document.getElementById('feeder14_phaseC').textContent = values[13] || '';
-    document.getElementById('feeder14_Total').textContent = Number(values[11])+Number(values[12])+Number(values[13]);
+    // document.getElementById('feeder14_Total').textContent = Number(values[11])+Number(values[12])+Number(values[13]);
     
     document.getElementById('feeder15_phaseA').textContent = values[14] || '';
     document.getElementById('feeder15_phaseB').textContent = values[15] || '';
@@ -543,7 +543,7 @@ function onMessageArrived(message) {
     document.getElementById('feeder16_phaseA').textContent = values[17] || '';
     document.getElementById('feeder16_phaseB').textContent = values[18] || '';
     document.getElementById('feeder16_phaseC').textContent = values[19] || '';
-    document.getElementById('feeder16_Total').textContent = Number(values[17])+Number(values[18])+Number(values[19]);
+    // document.getElementById('feeder16_Total').textContent = Number(values[17])+Number(values[18])+Number(values[19]);
     
     document.getElementById('feeder17_phaseA').textContent = values[20] || '';
     document.getElementById('feeder17_phaseB').textContent = values[21] || '';
@@ -581,7 +581,7 @@ function onMessageArrived(message) {
     document.getElementById('feeder24_phaseA').textContent = values[39] || '';
     document.getElementById('feeder24_phaseB').textContent = values[40] || '';
     document.getElementById('feeder24_phaseC').textContent = values[41] || '';
-    document.getElementById('feeder24_Total').textContent = Number(values[39])+Number(values[40])+Number(values[41]);
+    // document.getElementById('feeder24_Total').textContent = Number(values[39])+Number(values[40])+Number(values[41]);
     
     document.getElementById('feeder25_phaseA').textContent = values[42] || '';
     document.getElementById('feeder25_phaseB').textContent = values[43] || '';
@@ -591,7 +591,7 @@ function onMessageArrived(message) {
     document.getElementById('feeder26_phaseA').textContent = values[45] || '';
     document.getElementById('feeder26_phaseB').textContent = values[46] || '';
     document.getElementById('feeder26_phaseC').textContent = values[47] || '';
-    document.getElementById('feeder26_Total').textContent = Number(values[45])+Number(values[46])+Number(values[47]);
+    // document.getElementById('feeder26_Total').textContent = Number(values[45])+Number(values[46])+Number(values[47]);
     
     document.getElementById('feeder27_phaseA').textContent = values[48] || '';
     document.getElementById('feeder27_phaseB').textContent = values[49] || '';
@@ -629,7 +629,7 @@ function onMessageArrived(message) {
     document.getElementById('feeder34_phaseA').textContent = values[67] || '';
     document.getElementById('feeder34_phaseB').textContent = values[68] || '';
     document.getElementById('feeder34_phaseC').textContent = values[69] || '';
-    document.getElementById('feeder34_Total').textContent = Number(values[67])+Number(values[68])+Number(values[69]);
+    // document.getElementById('feeder34_Total').textContent = Number(values[67])+Number(values[68])+Number(values[69]);
     
     document.getElementById('feeder35_phaseA').textContent = values[70] || '';
     document.getElementById('feeder35_phaseB').textContent = values[71] || '';
@@ -639,7 +639,7 @@ function onMessageArrived(message) {
     document.getElementById('feeder36_phaseA').textContent = values[73] || '';
     document.getElementById('feeder36_phaseB').textContent = values[74] || '';
     document.getElementById('feeder36_phaseC').textContent = values[75] || '';
-    document.getElementById('feeder36_Total').textContent = Number(values[73])+Number(values[74])+Number(values[75]);
+    // document.getElementById('feeder36_Total').textContent = Number(values[73])+Number(values[74])+Number(values[75]);
     
     document.getElementById('feeder37_phaseA').textContent = values[76] || '';
     document.getElementById('feeder37_phaseB').textContent = values[77] || '';
@@ -677,7 +677,7 @@ function onMessageArrived(message) {
     document.getElementById('feeder44_phaseA').textContent = values[95] || '';
     document.getElementById('feeder44_phaseB').textContent = values[96] || '';
     document.getElementById('feeder44_phaseC').textContent = values[97] || '';
-    document.getElementById('feeder44_Total').textContent = Number(values[95])+Number(values[96])+Number(values[97]);
+    // document.getElementById('feeder44_Total').textContent = Number(values[95])+Number(values[96])+Number(values[97]);
     
     document.getElementById('feeder45_phaseA').textContent = values[98] || '';
     document.getElementById('feeder45_phaseB').textContent = values[99] || '';
@@ -687,7 +687,7 @@ function onMessageArrived(message) {
     document.getElementById('feeder46_phaseA').textContent = values[101] || '';
     document.getElementById('feeder46_phaseB').textContent = values[102] || '';
     document.getElementById('feeder46_phaseC').textContent = values[103] || '';
-    document.getElementById('feeder46_Total').textContent = Number(values[101])+Number(values[102])+Number(values[103]);
+    // document.getElementById('feeder46_Total').textContent = Number(values[101])+Number(values[102])+Number(values[103]);
     
     document.getElementById('feeder47_phaseA').textContent = values[104] || '';
     document.getElementById('feeder47_phaseB').textContent = values[105] || '';
@@ -865,9 +865,9 @@ function onMessageArrived(message) {
     +Number(document.getElementById('feeder33_Total').textContent)+Number(document.getElementById('feeder43_Total').textContent);
 
     // Total Voltage TOTAL CONSUMSION
-    document.getElementById('total4_Total').textContent = 
-    Number(document.getElementById('feeder14_Total').textContent) +Number(document.getElementById('feeder24_Total').textContent)
-    +Number(document.getElementById('feeder34_Total').textContent)+Number(document.getElementById('feeder44_Total').textContent);
+    // document.getElementById('total4_Total').textContent = 
+    // Number(document.getElementById('feeder14_Total').textContent) +Number(document.getElementById('feeder24_Total').textContent)
+    // +Number(document.getElementById('feeder34_Total').textContent)+Number(document.getElementById('feeder44_Total').textContent);
 
     // Total Current TOTAL CONSUMSION
     document.getElementById('total5_Total').textContent = 
@@ -875,9 +875,9 @@ function onMessageArrived(message) {
     +Number(document.getElementById('feeder35_Total').textContent)+Number(document.getElementById('feeder45_Total').textContent);
 
     // Total Power Factor TOTAL CONSUMSION
-    document.getElementById('total6_Total').textContent = 
-    Number(document.getElementById('feeder16_Total').textContent) +Number(document.getElementById('feeder26_Total').textContent)
-    +Number(document.getElementById('feeder36_Total').textContent)+Number(document.getElementById('feeder46_Total').textContent);
+    // document.getElementById('total6_Total').textContent = 
+    // Number(document.getElementById('feeder16_Total').textContent) +Number(document.getElementById('feeder26_Total').textContent)
+    // +Number(document.getElementById('feeder36_Total').textContent)+Number(document.getElementById('feeder46_Total').textContent);
 
     // Total Zero Sequence Current TOTAL CONSUMSION
     document.getElementById('total7_Total').textContent = 
