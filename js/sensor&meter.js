@@ -5,8 +5,8 @@ var subTopic='' ;
 
 function button_connect(){
     clientID = document.getElementById("box_user_name").value;
-    host = 'blithesome-chiropractor.cloudmqtt.com';
-    port = 443;
+    host = 'df9c9c89.us-east-1.emqx.cloud';
+    port = 8084;
 
     // Create a client instance
     // client = new Paho.MQTT.Client('e8f424ec.emqx.cloud', 8083, "test");
@@ -22,8 +22,8 @@ function button_connect(){
     // onFailure: onFailure,
     useSSL: true,
 
-    userName: 'rwufzabs',
-    password: 'kVZNw5Tuj6e5',
+    userName: 'IMPROTECH',
+    password: 'improtech2024',
     mqttVersion:4
     
   });
@@ -730,7 +730,7 @@ function onMessageArrived(message) {
     +Number(document.getElementById('feeder33_phaseA').textContent)+Number(document.getElementById('feeder43_phaseA').textContent);
 
     // Total Voltage Phase A
-    document.getElementById('total4_phaseA').textContent = values[11] || '';
+    document.getElementById('total4_phaseA').textContent = formattedValues[11] || '';
     // Number(document.getElementById('feeder14_phaseA').textContent) +Number(document.getElementById('feeder24_phaseA').textContent)
     // +Number(document.getElementById('feeder34_phaseA').textContent)+Number(document.getElementById('feeder44_phaseA').textContent);
 
@@ -778,7 +778,7 @@ function onMessageArrived(message) {
     +Number(document.getElementById('feeder33_phaseB').textContent)+Number(document.getElementById('feeder43_phaseB').textContent);
 
     // Total Voltage Phase B
-    document.getElementById('total4_phaseB').textContent = values[12] || '';
+    document.getElementById('total4_phaseB').textContent = formattedValues[12] || '';
     // document.getElementById('total4_phaseA').textContent = 
     // document.getElementById('total4_phaseB').textContent = 
     // Number(document.getElementById('feeder14_phaseB').textContent) +Number(document.getElementById('feeder24_phaseB').textContent)
@@ -827,7 +827,7 @@ function onMessageArrived(message) {
     +Number(document.getElementById('feeder33_phaseC').textContent)+Number(document.getElementById('feeder43_phaseC').textContent);
 
     // Total Voltage Phase C
-    document.getElementById('total4_phaseC').textContent = values[13] || '';
+    document.getElementById('total4_phaseC').textContent = formattedValues[13] || '';
     // document.getElementById('total4_phaseC').textContent = 
     // Number(document.getElementById('feeder14_phaseC').textContent) +Number(document.getElementById('feeder24_phaseC').textContent)
     // +Number(document.getElementById('feeder34_phaseC').textContent)+Number(document.getElementById('feeder44_phaseC').textContent);
