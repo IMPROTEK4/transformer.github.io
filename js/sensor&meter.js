@@ -5,8 +5,8 @@ var subTopic='' ;
 
 function button_connect(){
     clientID = document.getElementById("box_user_name").value;
-    host = 'jeabd6a9.us-east-1.emqx.cloud';
-    port = 8084;
+    host = 'blithesome-chiropractor.cloudmqtt.com';
+    port = 443;
 
     // Create a client instance
     // client = new Paho.MQTT.Client('e8f424ec.emqx.cloud', 8083, "test");
@@ -22,8 +22,8 @@ function button_connect(){
     // onFailure: onFailure,
     useSSL: true,
 
-    userName: 'RTU2024',
-    password: 'IMPROTEK_RTU_2024',
+    userName: 'rwufzabs',
+    password: 'kVZNw5Tuj6e5',
     mqttVersion:4
     
   });
@@ -518,7 +518,7 @@ function onMessageArrived(message) {
     document.getElementById('feeder11_phaseA').textContent = values[2] || '';
     document.getElementById('feeder11_phaseB').textContent = values[3] || '';
     document.getElementById('feeder11_phaseC').textContent = values[4] || '';
-    document.getElementById('feeder11_Total').textContent = Number(values[2])+Number(values[3])+Number(values[4]);
+    document.getElementById('feeder11_Total').textContent = (Number(values[2])+Number(values[3])+Number(values[4]));
     
     document.getElementById('feeder12_phaseA').textContent = values[5] || '';
     document.getElementById('feeder12_phaseB').textContent = values[6] || '';
@@ -723,9 +723,9 @@ function onMessageArrived(message) {
     +Number(document.getElementById('feeder33_phaseA').textContent)+Number(document.getElementById('feeder43_phaseA').textContent);
 
     // Total Voltage Phase A
-    document.getElementById('total4_phaseA').textContent = 
-    Number(document.getElementById('feeder14_phaseA').textContent) +Number(document.getElementById('feeder24_phaseA').textContent)
-    +Number(document.getElementById('feeder34_phaseA').textContent)+Number(document.getElementById('feeder44_phaseA').textContent);
+    document.getElementById('total4_phaseA').textContent = values[11] || '';
+    // Number(document.getElementById('feeder14_phaseA').textContent) +Number(document.getElementById('feeder24_phaseA').textContent)
+    // +Number(document.getElementById('feeder34_phaseA').textContent)+Number(document.getElementById('feeder44_phaseA').textContent);
 
     // Total Current Phase A
     document.getElementById('total5_phaseA').textContent = 
@@ -771,9 +771,11 @@ function onMessageArrived(message) {
     +Number(document.getElementById('feeder33_phaseB').textContent)+Number(document.getElementById('feeder43_phaseB').textContent);
 
     // Total Voltage Phase B
-    document.getElementById('total4_phaseB').textContent = 
-    Number(document.getElementById('feeder14_phaseB').textContent) +Number(document.getElementById('feeder24_phaseB').textContent)
-    +Number(document.getElementById('feeder34_phaseB').textContent)+Number(document.getElementById('feeder44_phaseB').textContent);
+    document.getElementById('total4_phaseB').textContent = values[12] || '';
+    // document.getElementById('total4_phaseA').textContent = 
+    // document.getElementById('total4_phaseB').textContent = 
+    // Number(document.getElementById('feeder14_phaseB').textContent) +Number(document.getElementById('feeder24_phaseB').textContent)
+    // +Number(document.getElementById('feeder34_phaseB').textContent)+Number(document.getElementById('feeder44_phaseB').textContent);
 
     // Total Current Phase B
     document.getElementById('total5_phaseB').textContent = 
@@ -818,9 +820,10 @@ function onMessageArrived(message) {
     +Number(document.getElementById('feeder33_phaseC').textContent)+Number(document.getElementById('feeder43_phaseC').textContent);
 
     // Total Voltage Phase C
-    document.getElementById('total4_phaseC').textContent = 
-    Number(document.getElementById('feeder14_phaseC').textContent) +Number(document.getElementById('feeder24_phaseC').textContent)
-    +Number(document.getElementById('feeder34_phaseC').textContent)+Number(document.getElementById('feeder44_phaseC').textContent);
+    document.getElementById('total4_phaseC').textContent = values[13] || '';
+    // document.getElementById('total4_phaseC').textContent = 
+    // Number(document.getElementById('feeder14_phaseC').textContent) +Number(document.getElementById('feeder24_phaseC').textContent)
+    // +Number(document.getElementById('feeder34_phaseC').textContent)+Number(document.getElementById('feeder44_phaseC').textContent);
 
     // Total Current Phase C
     document.getElementById('total5_phaseC').textContent = 
