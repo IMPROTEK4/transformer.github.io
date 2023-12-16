@@ -5,8 +5,8 @@ var subTopic='' ;
 
 function button_connect(){
     clientID = document.getElementById("box_user_name").value;
-    host = 'df9c9c89.us-east-1.emqx.cloud';
-    port = 8084;
+    host = 'blithesome-chiropractor.cloudmqtt.com';
+    port = 443;
 
     // Create a client instance
     // client = new Paho.MQTT.Client('e8f424ec.emqx.cloud', 8083, "test");
@@ -22,8 +22,8 @@ function button_connect(){
     // onFailure: onFailure,
     useSSL: true,
 
-    userName: 'IMPROTECH',
-    password: 'improtech2024',
+    userName: 'rwufzabs',
+    password: 'kVZNw5Tuj6e5',
     mqttVersion:4
     
   });
