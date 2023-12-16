@@ -5,8 +5,8 @@ var subTopic='' ;
 
 function button_connect(){
     clientID = document.getElementById("box_user_name").value;
-    host = 'blithesome-chiropractor.cloudmqtt.com';
-    port = 443;
+    host = 'df9c9c89.us-east-1.emqx.cloud';
+    port = 8084;
 
     // Create a client instance
     // client = new Paho.MQTT.Client('e8f424ec.emqx.cloud', 8083, "test");
@@ -22,8 +22,8 @@ function button_connect(){
     // onFailure: onFailure,
     useSSL: true,
 
-    userName: 'rwufzabs',
-    password: 'kVZNw5Tuj6e5',
+    userName: 'IMPROTECH',
+    password: 'improtech2024',
     mqttVersion:4
     
   });
@@ -35,7 +35,7 @@ function onConnect() {
     // Once a connection has been made, make a subscription and send a message.
     console.log("onConnect");
     connection_status = true ;
-    alert("Connect to server is success.")
+    // alert("Connect to server is success.")
 
     const textBox = document.getElementById('box_user_name');
     const connectButton = document.getElementById('button_connect');
@@ -500,10 +500,15 @@ function onConnectionLost(responseObject) {
 function onMessageArrived(message) {
   console.log("onMessageArrived:"+message.payloadString);
 
-    // Split the string into an array using comma as the delimiter
+    
     const values = message.payloadString.split(',');
 
-    // TOPIC = document.getElementById('box_tran_ID').value;
+     // Iterate through each value and cut only two digits behind the period
+  const formattedValues = values.map(value => {
+    // Parse the value to a float and use toFixed to cut to two digits behind the period
+    return parseFloat(value).toFixed(2);
+  });
+  
 
     // Allowed location
     const inputLocation = document.getElementById('openGoogleMap');
@@ -513,196 +518,198 @@ function onMessageArrived(message) {
   if (document.getElementById('box_tran_ID').disabled = true&values[1]=='F1'){
 
     // Location of Transformer
-    document.getElementById('openGoogleMap').value = values[0] || '' ;
+    document.getElementById('openGoogleMap').value = values[0] || '';
+    document.getElementById('feeder11_phaseA').textContent = formattedValues[2] || '';
+    document.getElementById('feeder11_phaseB').textContent = formattedValues[3] || '';
+    document.getElementById('feeder11_phaseC').textContent = formattedValues[4] || '';
 
-    document.getElementById('feeder11_phaseA').textContent = values[2] || '';
-    document.getElementById('feeder11_phaseB').textContent = values[3] || '';
-    document.getElementById('feeder11_phaseC').textContent = values[4] || '';
-    document.getElementById('feeder11_Total').textContent = (Number(values[2])+Number(values[3])+Number(values[4]));
+    // Convert strings to numbers and add them and Fixed 2 string (Example: 12.123 => 12.12)
+    // (parseFloat(formattedValues[2]) + parseFloat(formattedValues[3]) + parseFloat(formattedValues[4])).toFixed(2);
+    document.getElementById('feeder11_Total').textContent = ( parseFloat(formattedValues[2]) + parseFloat(formattedValues[3]) + parseFloat(formattedValues[4])).toFixed(2);
     
-    document.getElementById('feeder12_phaseA').textContent = values[5] || '';
-    document.getElementById('feeder12_phaseB').textContent = values[6] || '';
-    document.getElementById('feeder12_phaseC').textContent = values[7] || '';
-    document.getElementById('feeder12_Total').textContent = Number(values[5])+Number(values[6])+Number(values[7]);
+    document.getElementById('feeder12_phaseA').textContent = formattedValues[5] || '';
+    document.getElementById('feeder12_phaseB').textContent = formattedValues[6] || '';
+    document.getElementById('feeder12_phaseC').textContent = formattedValues[7] || '';
+    document.getElementById('feeder12_Total').textContent = ( parseFloat(formattedValues[5]) + parseFloat(formattedValues[6]) + parseFloat(formattedValues[7])).toFixed(2);
     
-    document.getElementById('feeder13_phaseA').textContent = values[8] || '';
-    document.getElementById('feeder13_phaseB').textContent = values[9] || '';
-    document.getElementById('feeder13_phaseC').textContent = values[10] || '';
-    document.getElementById('feeder13_Total').textContent = Number(values[8])+Number(values[9])+Number(values[10]);
+    document.getElementById('feeder13_phaseA').textContent = formattedValues[8] || '';
+    document.getElementById('feeder13_phaseB').textContent = formattedValues[9] || '';
+    document.getElementById('feeder13_phaseC').textContent = formattedValues[10] || '';
+    document.getElementById('feeder13_Total').textContent = ( parseFloat(formattedValues[8]) + parseFloat(formattedValues[9]) + parseFloat(formattedValues[10])).toFixed(2);
     
-    document.getElementById('feeder14_phaseA').textContent = values[11] || '';
-    document.getElementById('feeder14_phaseB').textContent = values[12] || '';
-    document.getElementById('feeder14_phaseC').textContent = values[13] || '';
-    // document.getElementById('feeder14_Total').textContent = Number(values[11])+Number(values[12])+Number(values[13]);
+    document.getElementById('feeder14_phaseA').textContent = formattedValues[11] || '';
+    document.getElementById('feeder14_phaseB').textContent = formattedValues[12] || '';
+    document.getElementById('feeder14_phaseC').textContent = formattedValues[13] || '';
+    // document.getElementById('feeder14_Total').textContent = ( parseFloat(formattedValues[11]) + parseFloat(formattedValues[12]) + parseFloat(formattedValues[13])).toFixed(2);
     
-    document.getElementById('feeder15_phaseA').textContent = values[14] || '';
-    document.getElementById('feeder15_phaseB').textContent = values[15] || '';
-    document.getElementById('feeder15_phaseC').textContent = values[16] || '';
-    document.getElementById('feeder15_Total').textContent = Number(values[14])+Number(values[15])+Number(values[16]);
+    document.getElementById('feeder15_phaseA').textContent = formattedValues[14] || '';
+    document.getElementById('feeder15_phaseB').textContent = formattedValues[15] || '';
+    document.getElementById('feeder15_phaseC').textContent = formattedValues[16] || '';
+    document.getElementById('feeder15_Total').textContent = ( parseFloat(formattedValues[14]) + parseFloat(formattedValues[15]) + parseFloat(formattedValues[16])).toFixed(2);
     
-    document.getElementById('feeder16_phaseA').textContent = values[17] || '';
-    document.getElementById('feeder16_phaseB').textContent = values[18] || '';
-    document.getElementById('feeder16_phaseC').textContent = values[19] || '';
-    // document.getElementById('feeder16_Total').textContent = Number(values[17])+Number(values[18])+Number(values[19]);
+    document.getElementById('feeder16_phaseA').textContent = formattedValues[17] || '';
+    document.getElementById('feeder16_phaseB').textContent = formattedValues[18] || '';
+    document.getElementById('feeder16_phaseC').textContent = formattedValues[19] || '';
+    // document.getElementById('feeder16_Total').textContent = ( parseFloat(formattedValues[17]) + parseFloat(formattedValues[18]) + parseFloat(formattedValues[19])).toFixed(2);
     
-    document.getElementById('feeder17_phaseA').textContent = values[20] || '';
-    document.getElementById('feeder17_phaseB').textContent = values[21] || '';
-    document.getElementById('feeder17_phaseC').textContent = values[22] || '';
-    document.getElementById('feeder17_Total').textContent = Number(values[20])+Number(values[21])+Number(values[22]);
+    document.getElementById('feeder17_phaseA').textContent = formattedValues[20] || '';
+    document.getElementById('feeder17_phaseB').textContent = formattedValues[21] || '';
+    document.getElementById('feeder17_phaseC').textContent = formattedValues[22] || '';
+    document.getElementById('feeder17_Total').textContent = ( parseFloat(formattedValues[20]) + parseFloat(formattedValues[21]) + parseFloat(formattedValues[22])).toFixed(2);
     
-    document.getElementById('feeder18_phaseA').textContent = values[23] || '';
-    document.getElementById('feeder18_phaseB').textContent = values[24] || '';
-    document.getElementById('feeder18_phaseC').textContent = values[25] || '';
-    document.getElementById('feeder18_Total').textContent = Number(values[23])+Number(values[24])+Number(values[25]);
+    document.getElementById('feeder18_phaseA').textContent = formattedValues[23] || '';
+    document.getElementById('feeder18_phaseB').textContent = formattedValues[24] || '';
+    document.getElementById('feeder18_phaseC').textContent = formattedValues[25] || '';
+    document.getElementById('feeder18_Total').textContent = ( parseFloat(formattedValues[23]) + parseFloat(formattedValues[24]) + parseFloat(formattedValues[25])).toFixed(2);
     
-    document.getElementById('feeder19_phaseA').textContent = values[26] || '';
-    document.getElementById('feeder19_phaseB').textContent = values[27] || '';
-    document.getElementById('feeder19_phaseC').textContent = values[28] || '';
-    document.getElementById('feeder19_Total').textContent = Number(values[26])+Number(values[27])+Number(values[28]);
+    document.getElementById('feeder19_phaseA').textContent = formattedValues[26] || '';
+    document.getElementById('feeder19_phaseB').textContent = formattedValues[27] || '';
+    document.getElementById('feeder19_phaseC').textContent = formattedValues[28] || '';
+    document.getElementById('feeder19_Total').textContent = ( parseFloat(formattedValues[26]) + parseFloat(formattedValues[27]) + parseFloat(formattedValues[28])).toFixed(2);
   }
 
   // Display value for FEEDER 2:
   if (values[29]=='F2'){
-    document.getElementById('feeder21_phaseA').textContent = values[30] || '';
-    document.getElementById('feeder21_phaseB').textContent = values[31] || '';
-    document.getElementById('feeder21_phaseC').textContent = values[32] || '';
-    document.getElementById('feeder21_Total').textContent = Number(values[30])+Number(values[31])+Number(values[32]);
+    document.getElementById('feeder21_phaseA').textContent = formattedValues[30] || '';
+    document.getElementById('feeder21_phaseB').textContent = formattedValues[31] || '';
+    document.getElementById('feeder21_phaseC').textContent = formattedValues[32] || '';
+    document.getElementById('feeder21_Total').textContent = ( parseFloat(formattedValues[30]) + parseFloat(formattedValues[31]) + parseFloat(formattedValues[32])).toFixed(2);
     
-    document.getElementById('feeder22_phaseA').textContent = values[33] || '';
-    document.getElementById('feeder22_phaseB').textContent = values[34] || '';
-    document.getElementById('feeder22_phaseC').textContent = values[35] || '';
-    document.getElementById('feeder22_Total').textContent = Number(values[33])+Number(values[34])+Number(values[35]);
+    document.getElementById('feeder22_phaseA').textContent = formattedValues[33] || '';
+    document.getElementById('feeder22_phaseB').textContent = formattedValues[34] || '';
+    document.getElementById('feeder22_phaseC').textContent = formattedValues[35] || '';
+    document.getElementById('feeder22_Total').textContent = ( parseFloat(formattedValues[33]) + parseFloat(formattedValues[34]) + parseFloat(formattedValues[35])).toFixed(2);
     
-    document.getElementById('feeder23_phaseA').textContent = values[36] || '';
-    document.getElementById('feeder23_phaseB').textContent = values[37] || '';
-    document.getElementById('feeder23_phaseC').textContent = values[38] || '';
-    document.getElementById('feeder23_Total').textContent = Number(values[36])+Number(values[37])+Number(values[38]);
+    document.getElementById('feeder23_phaseA').textContent = formattedValues[36] || '';
+    document.getElementById('feeder23_phaseB').textContent = formattedValues[37] || '';
+    document.getElementById('feeder23_phaseC').textContent = formattedValues[38] || '';
+    document.getElementById('feeder23_Total').textContent = ( parseFloat(formattedValues[36]) + parseFloat(formattedValues[37]) + parseFloat(formattedValues[38])).toFixed(2);
     
-    document.getElementById('feeder24_phaseA').textContent = values[39] || '';
-    document.getElementById('feeder24_phaseB').textContent = values[40] || '';
-    document.getElementById('feeder24_phaseC').textContent = values[41] || '';
-    // document.getElementById('feeder24_Total').textContent = Number(values[39])+Number(values[40])+Number(values[41]);
+    document.getElementById('feeder24_phaseA').textContent = formattedValues[39] || '';
+    document.getElementById('feeder24_phaseB').textContent = formattedValues[40] || '';
+    document.getElementById('feeder24_phaseC').textContent = formattedValues[41] || '';
+    // document.getElementById('feeder24_Total').textContent = ( parseFloat(formattedValues[39]) + parseFloat(formattedValues[40]) + parseFloat(formattedValues[41])).toFixed(2);
     
-    document.getElementById('feeder25_phaseA').textContent = values[42] || '';
-    document.getElementById('feeder25_phaseB').textContent = values[43] || '';
-    document.getElementById('feeder25_phaseC').textContent = values[44] || '';
-    document.getElementById('feeder25_Total').textContent = Number(values[42])+Number(values[43])+Number(values[44]);
+    document.getElementById('feeder25_phaseA').textContent = formattedValues[42] || '';
+    document.getElementById('feeder25_phaseB').textContent = formattedValues[43] || '';
+    document.getElementById('feeder25_phaseC').textContent = formattedValues[44] || '';
+    document.getElementById('feeder25_Total').textContent = ( parseFloat(formattedValues[42]) + parseFloat(formattedValues[43]) + parseFloat(formattedValues[44])).toFixed(2);
     
-    document.getElementById('feeder26_phaseA').textContent = values[45] || '';
-    document.getElementById('feeder26_phaseB').textContent = values[46] || '';
-    document.getElementById('feeder26_phaseC').textContent = values[47] || '';
-    // document.getElementById('feeder26_Total').textContent = Number(values[45])+Number(values[46])+Number(values[47]);
+    document.getElementById('feeder26_phaseA').textContent = formattedValues[45] || '';
+    document.getElementById('feeder26_phaseB').textContent = formattedValues[46] || '';
+    document.getElementById('feeder26_phaseC').textContent = formattedValues[47] || '';
+    // document.getElementById('feeder26_Total').textContent = ( parseFloat(formattedValues[45]) + parseFloat(formattedValues[46]) + parseFloat(formattedValues[47])).toFixed(2);
     
-    document.getElementById('feeder27_phaseA').textContent = values[48] || '';
-    document.getElementById('feeder27_phaseB').textContent = values[49] || '';
-    document.getElementById('feeder27_phaseC').textContent = values[50] || '';
-    document.getElementById('feeder27_Total').textContent = Number(values[48])+Number(values[49])+Number(values[50]);
+    document.getElementById('feeder27_phaseA').textContent = formattedValues[48] || '';
+    document.getElementById('feeder27_phaseB').textContent = formattedValues[49] || '';
+    document.getElementById('feeder27_phaseC').textContent = formattedValues[50] || '';
+    document.getElementById('feeder27_Total').textContent = ( parseFloat(formattedValues[48]) + parseFloat(formattedValues[49]) + parseFloat(formattedValues[50])).toFixed(2);
     
-    document.getElementById('feeder28_phaseA').textContent = values[51] || '';
-    document.getElementById('feeder28_phaseB').textContent = values[52] || '';
-    document.getElementById('feeder28_phaseC').textContent = values[53] || '';
-    document.getElementById('feeder28_Total').textContent = Number(values[51])+Number(values[52])+Number(values[53]);
+    document.getElementById('feeder28_phaseA').textContent = formattedValues[51] || '';
+    document.getElementById('feeder28_phaseB').textContent = formattedValues[52] || '';
+    document.getElementById('feeder28_phaseC').textContent = formattedValues[53] || '';
+    document.getElementById('feeder28_Total').textContent = ( parseFloat(formattedValues[51]) + parseFloat(formattedValues[52]) + parseFloat(formattedValues[53])).toFixed(2);
     
-    document.getElementById('feeder29_phaseA').textContent = values[54] || '';
-    document.getElementById('feeder29_phaseB').textContent = values[55] || '';
-    document.getElementById('feeder29_phaseC').textContent = values[56] || '';
-    document.getElementById('feeder29_Total').textContent = Number(values[54])+Number(values[55])+Number(values[56]);
+    document.getElementById('feeder29_phaseA').textContent = formattedValues[54] || '';
+    document.getElementById('feeder29_phaseB').textContent = formattedValues[55] || '';
+    document.getElementById('feeder29_phaseC').textContent = formattedValues[56] || '';
+    document.getElementById('feeder29_Total').textContent = ( parseFloat(formattedValues[54]) + parseFloat(formattedValues[55]) + parseFloat(formattedValues[56])).toFixed(2);
   }
 
   // Display value for FEEDER 3:
   if (values[57]=='F3'){
-    document.getElementById('feeder31_phaseA').textContent = values[58] || '';
-    document.getElementById('feeder31_phaseB').textContent = values[59] || '';
-    document.getElementById('feeder31_phaseC').textContent = values[60] || '';
-    document.getElementById('feeder31_Total').textContent = Number(values[58])+Number(values[59])+Number(values[60]);
+    document.getElementById('feeder31_phaseA').textContent = formattedValues[58] || '';
+    document.getElementById('feeder31_phaseB').textContent = formattedValues[59] || '';
+    document.getElementById('feeder31_phaseC').textContent = formattedValues[60] || '';
+    document.getElementById('feeder31_Total').textContent = ( parseFloat(formattedValues[58]) + parseFloat(formattedValues[59]) + parseFloat(formattedValues[60])).toFixed(2);
     
-    document.getElementById('feeder32_phaseA').textContent = values[61] || '';
-    document.getElementById('feeder32_phaseB').textContent = values[62] || '';
-    document.getElementById('feeder32_phaseC').textContent = values[63] || '';
-    document.getElementById('feeder32_Total').textContent = Number(values[61])+Number(values[62])+Number(values[63]);
+    document.getElementById('feeder32_phaseA').textContent = formattedValues[61] || '';
+    document.getElementById('feeder32_phaseB').textContent = formattedValues[62] || '';
+    document.getElementById('feeder32_phaseC').textContent = formattedValues[63] || '';
+    document.getElementById('feeder32_Total').textContent = ( parseFloat(formattedValues[61]) + parseFloat(formattedValues[62]) + parseFloat(formattedValues[63])).toFixed(2);
     
-    document.getElementById('feeder33_phaseA').textContent = values[64] || '';
-    document.getElementById('feeder33_phaseB').textContent = values[65] || '';
-    document.getElementById('feeder33_phaseC').textContent = values[66] || '';
-    document.getElementById('feeder33_Total').textContent = Number(values[64])+Number(values[65])+Number(values[66]);
+    document.getElementById('feeder33_phaseA').textContent = formattedValues[64] || '';
+    document.getElementById('feeder33_phaseB').textContent = formattedValues[65] || '';
+    document.getElementById('feeder33_phaseC').textContent = formattedValues[66] || '';
+    document.getElementById('feeder33_Total').textContent = ( parseFloat(formattedValues[64]) + parseFloat(formattedValues[65]) + parseFloat(formattedValues[66])).toFixed(2);
     
-    document.getElementById('feeder34_phaseA').textContent = values[67] || '';
-    document.getElementById('feeder34_phaseB').textContent = values[68] || '';
-    document.getElementById('feeder34_phaseC').textContent = values[69] || '';
-    // document.getElementById('feeder34_Total').textContent = Number(values[67])+Number(values[68])+Number(values[69]);
+    document.getElementById('feeder34_phaseA').textContent = formattedValues[67] || '';
+    document.getElementById('feeder34_phaseB').textContent = formattedValues[68] || '';
+    document.getElementById('feeder34_phaseC').textContent = formattedValues[69] || '';
+    // document.getElementById('feeder34_Total').textContent = ( parseFloat(formattedValues[67]) + parseFloat(formattedValues[68]) + parseFloat(formattedValues[69])).toFixed(2);
     
-    document.getElementById('feeder35_phaseA').textContent = values[70] || '';
-    document.getElementById('feeder35_phaseB').textContent = values[71] || '';
-    document.getElementById('feeder35_phaseC').textContent = values[72] || '';
-    document.getElementById('feeder35_Total').textContent = Number(values[70])+Number(values[71])+Number(values[72]);
+    document.getElementById('feeder35_phaseA').textContent = formattedValues[70] || '';
+    document.getElementById('feeder35_phaseB').textContent = formattedValues[71] || '';
+    document.getElementById('feeder35_phaseC').textContent = formattedValues[72] || '';
+    document.getElementById('feeder35_Total').textContent = ( parseFloat(formattedValues[70]) + parseFloat(formattedValues[71]) + parseFloat(formattedValues[72])).toFixed(2);
     
-    document.getElementById('feeder36_phaseA').textContent = values[73] || '';
-    document.getElementById('feeder36_phaseB').textContent = values[74] || '';
-    document.getElementById('feeder36_phaseC').textContent = values[75] || '';
-    // document.getElementById('feeder36_Total').textContent = Number(values[73])+Number(values[74])+Number(values[75]);
+    document.getElementById('feeder36_phaseA').textContent = formattedValues[73] || '';
+    document.getElementById('feeder36_phaseB').textContent = formattedValues[74] || '';
+    document.getElementById('feeder36_phaseC').textContent = formattedValues[75] || '';
+    // document.getElementById('feeder36_Total').textContent = ( parseFloat(formattedValues[73]) + parseFloat(formattedValues[74]) + parseFloat(formattedValues[75])).toFixed(2);
     
-    document.getElementById('feeder37_phaseA').textContent = values[76] || '';
-    document.getElementById('feeder37_phaseB').textContent = values[77] || '';
-    document.getElementById('feeder37_phaseC').textContent = values[78] || '';
-    document.getElementById('feeder37_Total').textContent = Number(values[76])+Number(values[77])+Number(values[78]);
+    document.getElementById('feeder37_phaseA').textContent = formattedValues[76] || '';
+    document.getElementById('feeder37_phaseB').textContent = formattedValues[77] || '';
+    document.getElementById('feeder37_phaseC').textContent = formattedValues[78] || '';
+    document.getElementById('feeder37_Total').textContent = ( parseFloat(formattedValues[76]) + parseFloat(formattedValues[77]) + parseFloat(formattedValues[78])).toFixed(2);
     
-    document.getElementById('feeder38_phaseA').textContent = values[79] || '';
-    document.getElementById('feeder38_phaseB').textContent = values[80] || '';
-    document.getElementById('feeder38_phaseC').textContent = values[81] || '';
-    document.getElementById('feeder38_Total').textContent = Number(values[79])+Number(values[80])+Number(values[81]);
+    document.getElementById('feeder38_phaseA').textContent = formattedValues[79] || '';
+    document.getElementById('feeder38_phaseB').textContent = formattedValues[80] || '';
+    document.getElementById('feeder38_phaseC').textContent = formattedValues[81] || '';
+    document.getElementById('feeder38_Total').textContent = ( parseFloat(formattedValues[79]) + parseFloat(formattedValues[80]) + parseFloat(formattedValues[81])).toFixed(2);
     
-    document.getElementById('feeder39_phaseA').textContent = values[82] || '';
-    document.getElementById('feeder39_phaseB').textContent = values[83] || '';
-    document.getElementById('feeder39_phaseC').textContent = values[84] || '';
-    document.getElementById('feeder39_Total').textContent = Number(values[82])+Number(values[83])+Number(values[84]);
+    document.getElementById('feeder39_phaseA').textContent = formattedValues[82] || '';
+    document.getElementById('feeder39_phaseB').textContent = formattedValues[83] || '';
+    document.getElementById('feeder39_phaseC').textContent = formattedValues[84] || '';
+    document.getElementById('feeder39_Total').textContent = ( parseFloat(formattedValues[82]) + parseFloat(formattedValues[83]) + parseFloat(formattedValues[84])).toFixed(2);
   }
 
   // Display value for FEEDER 4:
   if (values[85]=='F4'){
-    document.getElementById('feeder41_phaseA').textContent = values[86] || '';
-    document.getElementById('feeder41_phaseB').textContent = values[87] || '';
-    document.getElementById('feeder41_phaseC').textContent = values[88] || '';
-    document.getElementById('feeder41_Total').textContent = Number(values[86])+Number(values[87])+Number(values[88]);
+    document.getElementById('feeder41_phaseA').textContent = formattedValues[86] || '';
+    document.getElementById('feeder41_phaseB').textContent = formattedValues[87] || '';
+    document.getElementById('feeder41_phaseC').textContent = formattedValues[88] || '';
+    document.getElementById('feeder41_Total').textContent = ( parseFloat(formattedValues[86]) + parseFloat(formattedValues[87]) + parseFloat(formattedValues[88])).toFixed(2);
     
-    document.getElementById('feeder42_phaseA').textContent = values[89] || '';
-    document.getElementById('feeder42_phaseB').textContent = values[90] || '';
-    document.getElementById('feeder42_phaseC').textContent = values[91] || '';
-    document.getElementById('feeder42_Total').textContent = Number(values[89])+Number(values[90])+Number(values[91]);
+    document.getElementById('feeder42_phaseA').textContent = formattedValues[89] || '';
+    document.getElementById('feeder42_phaseB').textContent = formattedValues[90] || '';
+    document.getElementById('feeder42_phaseC').textContent = formattedValues[91] || '';
+    document.getElementById('feeder42_Total').textContent = ( parseFloat(formattedValues[89]) + parseFloat(formattedValues[90]) + parseFloat(formattedValues[91])).toFixed(2);
     
-    document.getElementById('feeder43_phaseA').textContent = values[92] || '';
-    document.getElementById('feeder43_phaseB').textContent = values[93] || '';
-    document.getElementById('feeder43_phaseC').textContent = values[94] || '';
-    document.getElementById('feeder43_Total').textContent = Number(values[92])+Number(values[93])+Number(values[94]);
+    document.getElementById('feeder43_phaseA').textContent = formattedValues[92] || '';
+    document.getElementById('feeder43_phaseB').textContent = formattedValues[93] || '';
+    document.getElementById('feeder43_phaseC').textContent = formattedValues[94] || '';
+    document.getElementById('feeder43_Total').textContent = ( parseFloat(formattedValues[92]) + parseFloat(formattedValues[93]) + parseFloat(formattedValues[94])).toFixed(2);
     
-    document.getElementById('feeder44_phaseA').textContent = values[95] || '';
-    document.getElementById('feeder44_phaseB').textContent = values[96] || '';
-    document.getElementById('feeder44_phaseC').textContent = values[97] || '';
-    // document.getElementById('feeder44_Total').textContent = Number(values[95])+Number(values[96])+Number(values[97]);
+    document.getElementById('feeder44_phaseA').textContent = formattedValues[95] || '';
+    document.getElementById('feeder44_phaseB').textContent = formattedValues[96] || '';
+    document.getElementById('feeder44_phaseC').textContent = formattedValues[97] || '';
+    // document.getElementById('feeder44_Total').textContent = ( parseFloat(formattedValues[95]) + parseFloat(formattedValues[96]) + parseFloat(formattedValues[97])).toFixed(2);
     
-    document.getElementById('feeder45_phaseA').textContent = values[98] || '';
-    document.getElementById('feeder45_phaseB').textContent = values[99] || '';
-    document.getElementById('feeder45_phaseC').textContent = values[100] || '';
-    document.getElementById('feeder45_Total').textContent = Number(values[98])+Number(values[99])+Number(values[100]);
+    document.getElementById('feeder45_phaseA').textContent = formattedValues[98] || '';
+    document.getElementById('feeder45_phaseB').textContent = formattedValues[99] || '';
+    document.getElementById('feeder45_phaseC').textContent = formattedValues[100] || '';
+    document.getElementById('feeder45_Total').textContent = ( parseFloat(formattedValues[98]) + parseFloat(formattedValues[99]) + parseFloat(formattedValues[100])).toFixed(2);
     
-    document.getElementById('feeder46_phaseA').textContent = values[101] || '';
-    document.getElementById('feeder46_phaseB').textContent = values[102] || '';
-    document.getElementById('feeder46_phaseC').textContent = values[103] || '';
-    // document.getElementById('feeder46_Total').textContent = Number(values[101])+Number(values[102])+Number(values[103]);
+    document.getElementById('feeder46_phaseA').textContent = formattedValues[101] || '';
+    document.getElementById('feeder46_phaseB').textContent = formattedValues[102] || '';
+    document.getElementById('feeder46_phaseC').textContent = formattedValues[103] || '';
+    // document.getElementById('feeder46_Total').textContent = ( parseFloat(formattedValues[101]) + parseFloat(formattedValues[102]) + parseFloat(formattedValues[103])).toFixed(2);
     
-    document.getElementById('feeder47_phaseA').textContent = values[104] || '';
-    document.getElementById('feeder47_phaseB').textContent = values[105] || '';
-    document.getElementById('feeder47_phaseC').textContent = values[106] || '';
-    document.getElementById('feeder47_Total').textContent = Number(values[104])+Number(values[105])+Number(values[106]);
+    document.getElementById('feeder47_phaseA').textContent = formattedValues[104] || '';
+    document.getElementById('feeder47_phaseB').textContent = formattedValues[105] || '';
+    document.getElementById('feeder47_phaseC').textContent = formattedValues[106] || '';
+    document.getElementById('feeder47_Total').textContent = ( parseFloat(formattedValues[104]) + parseFloat(formattedValues[105]) + parseFloat(formattedValues[106])).toFixed(2);
     
-    document.getElementById('feeder48_phaseA').textContent = values[107] || '';
-    document.getElementById('feeder48_phaseB').textContent = values[108] || '';
-    document.getElementById('feeder48_phaseC').textContent = values[109] || '';
-    document.getElementById('feeder48_Total').textContent = Number(values[107])+Number(values[108])+Number(values[109]);
+    document.getElementById('feeder48_phaseA').textContent = formattedValues[107] || '';
+    document.getElementById('feeder48_phaseB').textContent = formattedValues[108] || '';
+    document.getElementById('feeder48_phaseC').textContent = formattedValues[109] || '';
+    document.getElementById('feeder48_Total').textContent = ( parseFloat(formattedValues[107]) + parseFloat(formattedValues[108]) + parseFloat(formattedValues[109])).toFixed(2);
     
-    document.getElementById('feeder49_phaseA').textContent = values[110] || '';
-    document.getElementById('feeder49_phaseB').textContent = values[111] || '';
-    document.getElementById('feeder49_phaseC').textContent = values[112] || '';
-    document.getElementById('feeder49_Total').textContent = Number(values[110])+Number(values[111])+Number(values[112]);
+    document.getElementById('feeder49_phaseA').textContent = formattedValues[110] || '';
+    document.getElementById('feeder49_phaseB').textContent = formattedValues[111] || '';
+    document.getElementById('feeder49_phaseC').textContent = formattedValues[112] || '';
+    document.getElementById('feeder49_Total').textContent = ( parseFloat(formattedValues[110]) + parseFloat(formattedValues[111]) + parseFloat(formattedValues[112])).toFixed(2);
   }
 
 
