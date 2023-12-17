@@ -557,10 +557,10 @@ function onMessageArrived(message) {
     document.getElementById('feeder17_phaseC').textContent = formattedValues[22] || '';
     document.getElementById('feeder17_Total').textContent = ( parseFloat(formattedValues[20]) + parseFloat(formattedValues[21]) + parseFloat(formattedValues[22])).toFixed(2);
     
-    document.getElementById('feeder18_phaseA').textContent = formattedValues[23] || '';
-    document.getElementById('feeder18_phaseB').textContent = formattedValues[24] || '';
-    document.getElementById('feeder18_phaseC').textContent = formattedValues[25] || '';
-    document.getElementById('feeder18_Total').textContent = ( parseFloat(formattedValues[23]) + parseFloat(formattedValues[24]) + parseFloat(formattedValues[25])).toFixed(2);
+    document.getElementById('feeder18_phaseA').textContent = formattedValues[23]*(0.1) || '';
+    document.getElementById('feeder18_phaseB').textContent = formattedValues[24]*(0.1) || '';
+    document.getElementById('feeder18_phaseC').textContent = formattedValues[25]*(0.1) || '';
+    document.getElementById('feeder18_Total').textContent = ( (parseFloat(formattedValues[23]) + parseFloat(formattedValues[24]) + parseFloat(formattedValues[25]))*(0.1)).toFixed(2);
     
     document.getElementById('feeder19_phaseA').textContent = formattedValues[26] || '';
     document.getElementById('feeder19_phaseB').textContent = formattedValues[27] || '';
@@ -605,10 +605,10 @@ function onMessageArrived(message) {
     document.getElementById('feeder27_phaseC').textContent = formattedValues[50] || '';
     document.getElementById('feeder27_Total').textContent = ( parseFloat(formattedValues[48]) + parseFloat(formattedValues[49]) + parseFloat(formattedValues[50])).toFixed(2);
     
-    document.getElementById('feeder28_phaseA').textContent = formattedValues[51] || '';
-    document.getElementById('feeder28_phaseB').textContent = formattedValues[52] || '';
-    document.getElementById('feeder28_phaseC').textContent = formattedValues[53] || '';
-    document.getElementById('feeder28_Total').textContent = ( parseFloat(formattedValues[51]) + parseFloat(formattedValues[52]) + parseFloat(formattedValues[53])).toFixed(2);
+    document.getElementById('feeder28_phaseA').textContent = formattedValues[51]*(0.1) || '';
+    document.getElementById('feeder28_phaseB').textContent = formattedValues[52]*(0.1) || '';
+    document.getElementById('feeder28_phaseC').textContent = formattedValues[53]*(0.1) || '';
+    document.getElementById('feeder28_Total').textContent = ( (parseFloat(formattedValues[51]) + parseFloat(formattedValues[52]) + parseFloat(formattedValues[53]))*(0.1)).toFixed(2);
     
     document.getElementById('feeder29_phaseA').textContent = formattedValues[54] || '';
     document.getElementById('feeder29_phaseB').textContent = formattedValues[55] || '';
@@ -653,10 +653,10 @@ function onMessageArrived(message) {
     document.getElementById('feeder37_phaseC').textContent = formattedValues[78] || '';
     document.getElementById('feeder37_Total').textContent = ( parseFloat(formattedValues[76]) + parseFloat(formattedValues[77]) + parseFloat(formattedValues[78])).toFixed(2);
     
-    document.getElementById('feeder38_phaseA').textContent = formattedValues[79] || '';
-    document.getElementById('feeder38_phaseB').textContent = formattedValues[80] || '';
-    document.getElementById('feeder38_phaseC').textContent = formattedValues[81] || '';
-    document.getElementById('feeder38_Total').textContent = ( parseFloat(formattedValues[79]) + parseFloat(formattedValues[80]) + parseFloat(formattedValues[81])).toFixed(2);
+    document.getElementById('feeder38_phaseA').textContent = formattedValues[79]*(0.1) || '';
+    document.getElementById('feeder38_phaseB').textContent = formattedValues[80]*(0.1) || '';
+    document.getElementById('feeder38_phaseC').textContent = formattedValues[81]*(0.1) || '';
+    document.getElementById('feeder38_Total').textContent = ( (parseFloat(formattedValues[79]) + parseFloat(formattedValues[80]) + parseFloat(formattedValues[81]))*(0.1)).toFixed(2);
     
     document.getElementById('feeder39_phaseA').textContent = formattedValues[82] || '';
     document.getElementById('feeder39_phaseB').textContent = formattedValues[83] || '';
@@ -701,10 +701,10 @@ function onMessageArrived(message) {
     document.getElementById('feeder47_phaseC').textContent = formattedValues[106] || '';
     document.getElementById('feeder47_Total').textContent = ( parseFloat(formattedValues[104]) + parseFloat(formattedValues[105]) + parseFloat(formattedValues[106])).toFixed(2);
     
-    document.getElementById('feeder48_phaseA').textContent = formattedValues[107] || '';
-    document.getElementById('feeder48_phaseB').textContent = formattedValues[108] || '';
-    document.getElementById('feeder48_phaseC').textContent = formattedValues[109] || '';
-    document.getElementById('feeder48_Total').textContent = ( parseFloat(formattedValues[107]) + parseFloat(formattedValues[108]) + parseFloat(formattedValues[109])).toFixed(2);
+    document.getElementById('feeder48_phaseA').textContent = formattedValues[107]*(0.1) || '';
+    document.getElementById('feeder48_phaseB').textContent = formattedValues[108]*(0.1) || '';
+    document.getElementById('feeder48_phaseC').textContent = formattedValues[109]*(0.1) || '';
+    document.getElementById('feeder48_Total').textContent = ( (parseFloat(formattedValues[107]) + parseFloat(formattedValues[108]) + parseFloat(formattedValues[109]))*(0.1)).toFixed(2);
     
     document.getElementById('feeder49_phaseA').textContent = formattedValues[110] || '';
     document.getElementById('feeder49_phaseB').textContent = formattedValues[111] || '';
@@ -715,194 +715,165 @@ function onMessageArrived(message) {
 
   // -------------TOTAL CONSOMSION PHASE A--------------------
   // Total Active Power Phase A
-    document.getElementById('total1_phaseA').textContent = 
-    Number(document.getElementById('feeder11_phaseA').textContent) +Number(document.getElementById('feeder21_phaseA').textContent)
-    +Number(document.getElementById('feeder31_phaseA').textContent)+Number(document.getElementById('feeder41_phaseA').textContent);
+  document.getElementById('total1_phaseA').textContent = ( parseFloat(formattedValues[2]) + parseFloat(formattedValues[30]) 
+  + parseFloat(formattedValues[58]) + parseFloat(formattedValues[86])).toFixed(2);
 
     // Total Reactive Power Phase A
-    document.getElementById('total2_phaseA').textContent = 
-    Number(document.getElementById('feeder12_phaseA').textContent) +Number(document.getElementById('feeder22_phaseA').textContent)
-    +Number(document.getElementById('feeder32_phaseA').textContent)+Number(document.getElementById('feeder42_phaseA').textContent);
+    document.getElementById('total2_phaseA').textContent = ( parseFloat(formattedValues[5]) + parseFloat(formattedValues[33]) 
+    + parseFloat(formattedValues[61]) + parseFloat(formattedValues[89])).toFixed(2);
 
     // Total Apparent Phase A
-    document.getElementById('total3_phaseA').textContent = 
-    Number(document.getElementById('feeder13_phaseA').textContent) +Number(document.getElementById('feeder23_phaseA').textContent)
-    +Number(document.getElementById('feeder33_phaseA').textContent)+Number(document.getElementById('feeder43_phaseA').textContent);
+    document.getElementById('total3_phaseA').textContent = ( parseFloat(formattedValues[8]) + parseFloat(formattedValues[36]) 
+    + parseFloat(formattedValues[64]) + parseFloat(formattedValues[92])).toFixed(2);
 
     // Total Voltage Phase A
     document.getElementById('total4_phaseA').textContent = formattedValues[11] || '';
-    // Number(document.getElementById('feeder14_phaseA').textContent) +Number(document.getElementById('feeder24_phaseA').textContent)
-    // +Number(document.getElementById('feeder34_phaseA').textContent)+Number(document.getElementById('feeder44_phaseA').textContent);
 
     // Total Current Phase A
-    document.getElementById('total5_phaseA').textContent = 
-    Number(document.getElementById('feeder15_phaseA').textContent) +Number(document.getElementById('feeder25_phaseA').textContent)
-    +Number(document.getElementById('feeder35_phaseA').textContent)+Number(document.getElementById('feeder45_phaseA').textContent);
+    document.getElementById('total5_phaseA').textContent = ( parseFloat(formattedValues[14]) + parseFloat(formattedValues[42]) 
+    + parseFloat(formattedValues[70]) + parseFloat(formattedValues[98])).toFixed(2); 
 
     // Total Power Factor Phase A
-    document.getElementById('total6_phaseA').textContent = 
-    Number(document.getElementById('feeder16_phaseA').textContent) +Number(document.getElementById('feeder26_phaseA').textContent)
-    +Number(document.getElementById('feeder36_phaseA').textContent)+Number(document.getElementById('feeder46_phaseA').textContent);
+    document.getElementById('total6_phaseA').textContent = ( parseFloat(formattedValues[17]) + parseFloat(formattedValues[45]) 
+    + parseFloat(formattedValues[73]) + parseFloat(formattedValues[101])).toFixed(2); 
 
     // Total Zero Sequence Current Phase A
-    document.getElementById('total7_phaseA').textContent = 
-    Number(document.getElementById('feeder17_phaseA').textContent) +Number(document.getElementById('feeder27_phaseA').textContent)
-    +Number(document.getElementById('feeder37_phaseA').textContent)+Number(document.getElementById('feeder47_phaseA').textContent);
+    document.getElementById('total7_phaseA').textContent = ( parseFloat(formattedValues[20]) + parseFloat(formattedValues[48]) 
+    + parseFloat(formattedValues[76]) + parseFloat(formattedValues[104])).toFixed(2); 
 
     // Total Current Unbalance Phase A
-    document.getElementById('total8_phaseA').textContent = 
-    Number(document.getElementById('feeder18_phaseA').textContent) +Number(document.getElementById('feeder28_phaseA').textContent)
-    +Number(document.getElementById('feeder38_phaseA').textContent)+Number(document.getElementById('feeder48_phaseA').textContent);
+    document.getElementById('total8_phaseA').textContent = ( (parseFloat(formattedValues[23]) + parseFloat(formattedValues[51]) 
+    + parseFloat(formattedValues[79]) + parseFloat(formattedValues[107]))*(0.1)).toFixed(2); 
 
     // Total Energy Phase A
-    document.getElementById('total9_phaseA').textContent = 
-    Number(document.getElementById('feeder19_phaseA').textContent) +Number(document.getElementById('feeder29_phaseA').textContent)
-    +Number(document.getElementById('feeder39_phaseA').textContent)+Number(document.getElementById('feeder49_phaseA').textContent);
+    document.getElementById('total9_phaseA').textContent = ( parseFloat(formattedValues[26]) + parseFloat(formattedValues[54]) 
+    + parseFloat(formattedValues[82]) + parseFloat(formattedValues[110])).toFixed(2); 
+  
 
 
     
   // -------------TOTAL CONSOMSION PHASE B--------------------
   // Total Active Power Phase B
-    document.getElementById('total1_phaseB').textContent = 
-    Number(document.getElementById('feeder11_phaseB').textContent) +Number(document.getElementById('feeder21_phaseB').textContent)
-    +Number(document.getElementById('feeder31_phaseB').textContent)+Number(document.getElementById('feeder41_phaseB').textContent);
+    document.getElementById('total1_phaseB').textContent = ( parseFloat(formattedValues[3]) + parseFloat(formattedValues[31]) 
+    + parseFloat(formattedValues[59]) + parseFloat(formattedValues[87])).toFixed(2); 
 
     // Total Reactive Power Phase B
-    document.getElementById('total2_phaseB').textContent = 
-    Number(document.getElementById('feeder12_phaseB').textContent) +Number(document.getElementById('feeder22_phaseB').textContent)
-    +Number(document.getElementById('feeder32_phaseB').textContent)+Number(document.getElementById('feeder42_phaseB').textContent);
+    document.getElementById('total2_phaseB').textContent = ( parseFloat(formattedValues[6]) + parseFloat(formattedValues[34]) 
+    + parseFloat(formattedValues[62]) + parseFloat(formattedValues[90])).toFixed(2); 
 
     // Total Apparent Phase B
-    document.getElementById('total3_phaseB').textContent = 
-    Number(document.getElementById('feeder13_phaseB').textContent) +Number(document.getElementById('feeder23_phaseB').textContent)
-    +Number(document.getElementById('feeder33_phaseB').textContent)+Number(document.getElementById('feeder43_phaseB').textContent);
+    document.getElementById('total3_phaseB').textContent = ( parseFloat(formattedValues[9]) + parseFloat(formattedValues[37]) 
+    + parseFloat(formattedValues[65]) + parseFloat(formattedValues[93])).toFixed(2); 
 
     // Total Voltage Phase B
     document.getElementById('total4_phaseB').textContent = formattedValues[12] || '';
-    // document.getElementById('total4_phaseA').textContent = 
-    // document.getElementById('total4_phaseB').textContent = 
-    // Number(document.getElementById('feeder14_phaseB').textContent) +Number(document.getElementById('feeder24_phaseB').textContent)
-    // +Number(document.getElementById('feeder34_phaseB').textContent)+Number(document.getElementById('feeder44_phaseB').textContent);
 
     // Total Current Phase B
-    document.getElementById('total5_phaseB').textContent = 
-    Number(document.getElementById('feeder15_phaseB').textContent) +Number(document.getElementById('feeder25_phaseB').textContent)
-    +Number(document.getElementById('feeder35_phaseB').textContent)+Number(document.getElementById('feeder45_phaseB').textContent);
+    document.getElementById('total5_phaseB').textContent = ( parseFloat(formattedValues[15]) + parseFloat(formattedValues[43]) 
+    + parseFloat(formattedValues[71]) + parseFloat(formattedValues[99])).toFixed(2); 
 
     // Total Power Factor Phase B
-    document.getElementById('total6_phaseB').textContent = 
-    Number(document.getElementById('feeder16_phaseB').textContent) +Number(document.getElementById('feeder26_phaseB').textContent)
-    +Number(document.getElementById('feeder36_phaseB').textContent)+Number(document.getElementById('feeder46_phaseB').textContent);
+    document.getElementById('total6_phaseB').textContent = ( parseFloat(formattedValues[18]) + parseFloat(formattedValues[46]) 
+    + parseFloat(formattedValues[74]) + parseFloat(formattedValues[102])).toFixed(2); 
 
     // Total Zero Sequence Current Phase B
-    document.getElementById('total7_phaseB').textContent = 
-    Number(document.getElementById('feeder17_phaseB').textContent) +Number(document.getElementById('feeder27_phaseB').textContent)
-    +Number(document.getElementById('feeder37_phaseB').textContent)+Number(document.getElementById('feeder47_phaseB').textContent);
+    document.getElementById('total7_phaseB').textContent = ( parseFloat(formattedValues[21]) + parseFloat(formattedValues[49]) 
+    + parseFloat(formattedValues[77]) + parseFloat(formattedValues[105])).toFixed(2); 
 
     // Total Current Unbalance Phase B
-    document.getElementById('total8_phaseB').textContent = 
-    Number(document.getElementById('feeder18_phaseB').textContent) +Number(document.getElementById('feeder28_phaseB').textContent)
-    +Number(document.getElementById('feeder38_phaseB').textContent)+Number(document.getElementById('feeder48_phaseB').textContent);
+    document.getElementById('total8_phaseB').textContent = ( (parseFloat(formattedValues[24]) + parseFloat(formattedValues[52]) 
+    + parseFloat(formattedValues[80]) + parseFloat(formattedValues[108]))*(0.1)).toFixed(2); 
 
     // Total Energy Phase B
-    document.getElementById('total9_phaseB').textContent = 
-    Number(document.getElementById('feeder19_phaseB').textContent) +Number(document.getElementById('feeder29_phaseB').textContent)
-    +Number(document.getElementById('feeder39_phaseB').textContent)+Number(document.getElementById('feeder49_phaseB').textContent);
+    document.getElementById('total9_phaseB').textContent = ( parseFloat(formattedValues[27]) + parseFloat(formattedValues[55]) 
+    + parseFloat(formattedValues[83]) + parseFloat(formattedValues[111])).toFixed(2); 
+
 
 
   // -------------TOTAL CONSOMSION PHASE C--------------------
   // Total Active Power Phase C
-    document.getElementById('total1_phaseC').textContent = 
-    Number(document.getElementById('feeder11_phaseC').textContent) +Number(document.getElementById('feeder21_phaseC').textContent)
-    +Number(document.getElementById('feeder31_phaseC').textContent)+Number(document.getElementById('feeder41_phaseC').textContent);
+    document.getElementById('total1_phaseC').textContent = ( parseFloat(formattedValues[4]) + parseFloat(formattedValues[32]) 
+    + parseFloat(formattedValues[60]) + parseFloat(formattedValues[88])).toFixed(2); 
 
     // Total Reactive Power Phase C
-    document.getElementById('total2_phaseC').textContent = 
-    Number(document.getElementById('feeder12_phaseC').textContent) +Number(document.getElementById('feeder22_phaseC').textContent)
-    +Number(document.getElementById('feeder32_phaseC').textContent)+Number(document.getElementById('feeder42_phaseC').textContent);
+    document.getElementById('total2_phaseC').textContent = ( parseFloat(formattedValues[7]) + parseFloat(formattedValues[35]) 
+    + parseFloat(formattedValues[63]) + parseFloat(formattedValues[91])).toFixed(2); 
 
     // Total Apparent Phase C
-    document.getElementById('total3_phaseC').textContent = 
-    Number(document.getElementById('feeder13_phaseC').textContent) +Number(document.getElementById('feeder23_phaseC').textContent)
-    +Number(document.getElementById('feeder33_phaseC').textContent)+Number(document.getElementById('feeder43_phaseC').textContent);
+    document.getElementById('total3_phaseC').textContent = ( parseFloat(formattedValues[10]) + parseFloat(formattedValues[38]) 
+    + parseFloat(formattedValues[66]) + parseFloat(formattedValues[94])).toFixed(2); 
 
     // Total Voltage Phase C
-    document.getElementById('total4_phaseC').textContent = formattedValues[13] || '';
-    // document.getElementById('total4_phaseC').textContent = 
-    // Number(document.getElementById('feeder14_phaseC').textContent) +Number(document.getElementById('feeder24_phaseC').textContent)
-    // +Number(document.getElementById('feeder34_phaseC').textContent)+Number(document.getElementById('feeder44_phaseC').textContent);
+    document.getElementById('total4_phaseC').textContent = formattedValues[13] || ''; 
 
     // Total Current Phase C
-    document.getElementById('total5_phaseC').textContent = 
-    Number(document.getElementById('feeder15_phaseC').textContent) +Number(document.getElementById('feeder25_phaseC').textContent)
-    +Number(document.getElementById('feeder35_phaseC').textContent)+Number(document.getElementById('feeder45_phaseC').textContent);
+    document.getElementById('total5_phaseC').textContent = ( parseFloat(formattedValues[16]) + parseFloat(formattedValues[44]) 
+    + parseFloat(formattedValues[72]) + parseFloat(formattedValues[100])).toFixed(2); 
 
     // Total Power Factor Phase C
-    document.getElementById('total6_phaseC').textContent = 
-    Number(document.getElementById('feeder16_phaseC').textContent) +Number(document.getElementById('feeder26_phaseC').textContent)
-    +Number(document.getElementById('feeder36_phaseC').textContent)+Number(document.getElementById('feeder46_phaseC').textContent);
+    document.getElementById('total6_phaseC').textContent = ( parseFloat(formattedValues[19]) + parseFloat(formattedValues[47]) 
+    + parseFloat(formattedValues[75]) + parseFloat(formattedValues[103])).toFixed(2); 
 
     // Total Zero Sequence Current Phase C
-    document.getElementById('total7_phaseC').textContent = 
-    Number(document.getElementById('feeder17_phaseC').textContent) +Number(document.getElementById('feeder27_phaseC').textContent)
-    +Number(document.getElementById('feeder37_phaseC').textContent)+Number(document.getElementById('feeder47_phaseC').textContent);
+    document.getElementById('total7_phaseC').textContent = ( parseFloat(formattedValues[22]) + parseFloat(formattedValues[50]) 
+    + parseFloat(formattedValues[78]) + parseFloat(formattedValues[106])).toFixed(2); 
 
     // Total Current Unbalance Phase C
-    document.getElementById('total8_phaseC').textContent = 
-    Number(document.getElementById('feeder18_phaseC').textContent) +Number(document.getElementById('feeder28_phaseC').textContent)
-    +Number(document.getElementById('feeder38_phaseC').textContent)+Number(document.getElementById('feeder48_phaseC').textContent);
+    document.getElementById('total8_phaseC').textContent = ( (parseFloat(formattedValues[25]) + parseFloat(formattedValues[53]) 
+    + parseFloat(formattedValues[81]) + parseFloat(formattedValues[109]))*(0.1)).toFixed(2); 
 
     // Total Energy Phase C
-    document.getElementById('total9_phaseC').textContent = 
-    Number(document.getElementById('feeder19_phaseC').textContent) +Number(document.getElementById('feeder29_phaseC').textContent)
-    +Number(document.getElementById('feeder39_phaseC').textContent)+Number(document.getElementById('feeder49_phaseC').textContent);
+    document.getElementById('total9_phaseC').textContent = ( parseFloat(formattedValues[28]) + parseFloat(formattedValues[56]) 
+    + parseFloat(formattedValues[84]) + parseFloat(formattedValues[112])).toFixed(2); 
+
 
 
   // -------------TOTAL CONSOMSION TOTAL CONSUMSION--------------------
   // Total Active Power TOTAL CONSUMSION
     document.getElementById('total1_Total').textContent = 
-    Number(document.getElementById('feeder11_Total').textContent) +Number(document.getElementById('feeder21_Total').textContent)
-    +Number(document.getElementById('feeder31_Total').textContent)+Number(document.getElementById('feeder41_Total').textContent);
+    ( parseFloat(formattedValues[2]) + parseFloat(formattedValues[3]) + parseFloat(formattedValues[4]) + parseFloat(formattedValues[30])
+    + parseFloat(formattedValues[31]) + parseFloat(formattedValues[32]) + parseFloat(formattedValues[58]) + parseFloat(formattedValues[59]) 
+    + parseFloat(formattedValues[60]) + parseFloat(formattedValues[86]) + parseFloat(formattedValues[87]) + parseFloat(formattedValues[88]) ).toFixed(2); 
 
     // Total Reactive Power TOTAL CONSUMSION
-    document.getElementById('total2_Total').textContent = 
-    Number(document.getElementById('feeder12_Total').textContent) +Number(document.getElementById('feeder22_Total').textContent)
-    +Number(document.getElementById('feeder32_Total').textContent)+Number(document.getElementById('feeder42_Total').textContent);
+    document.getElementById('total2_Total').textContent =
+    ( parseFloat(formattedValues[5]) + parseFloat(formattedValues[6]) + parseFloat(formattedValues[7]) + parseFloat(formattedValues[33])
+    + parseFloat(formattedValues[34]) + parseFloat(formattedValues[35]) + parseFloat(formattedValues[61]) + parseFloat(formattedValues[62]) 
+    + parseFloat(formattedValues[63]) + parseFloat(formattedValues[89]) + parseFloat(formattedValues[90]) + parseFloat(formattedValues[91]) ).toFixed(2);
 
     // Total Apparent TOTAL CONSUMSION
     document.getElementById('total3_Total').textContent = 
-    Number(document.getElementById('feeder13_Total').textContent) +Number(document.getElementById('feeder23_Total').textContent)
-    +Number(document.getElementById('feeder33_Total').textContent)+Number(document.getElementById('feeder43_Total').textContent);
+    ( parseFloat(formattedValues[8]) + parseFloat(formattedValues[9]) + parseFloat(formattedValues[10]) + parseFloat(formattedValues[36])
+    + parseFloat(formattedValues[37]) + parseFloat(formattedValues[38]) + parseFloat(formattedValues[64]) + parseFloat(formattedValues[65]) 
+    + parseFloat(formattedValues[66]) + parseFloat(formattedValues[92]) + parseFloat(formattedValues[93]) + parseFloat(formattedValues[94]) ).toFixed(2);
 
     // Total Voltage TOTAL CONSUMSION
-    // document.getElementById('total4_Total').textContent = 
-    // Number(document.getElementById('feeder14_Total').textContent) +Number(document.getElementById('feeder24_Total').textContent)
-    // +Number(document.getElementById('feeder34_Total').textContent)+Number(document.getElementById('feeder44_Total').textContent);
 
     // Total Current TOTAL CONSUMSION
     document.getElementById('total5_Total').textContent = 
-    Number(document.getElementById('feeder15_Total').textContent) +Number(document.getElementById('feeder25_Total').textContent)
-    +Number(document.getElementById('feeder35_Total').textContent)+Number(document.getElementById('feeder45_Total').textContent);
+    ( parseFloat(formattedValues[14]) + parseFloat(formattedValues[15]) + parseFloat(formattedValues[16]) + parseFloat(formattedValues[42])
+    + parseFloat(formattedValues[43]) + parseFloat(formattedValues[44]) + parseFloat(formattedValues[70]) + parseFloat(formattedValues[71]) 
+    + parseFloat(formattedValues[72]) + parseFloat(formattedValues[98]) + parseFloat(formattedValues[99]) + parseFloat(formattedValues[100]) ).toFixed(2);
 
     // Total Power Factor TOTAL CONSUMSION
-    // document.getElementById('total6_Total').textContent = 
-    // Number(document.getElementById('feeder16_Total').textContent) +Number(document.getElementById('feeder26_Total').textContent)
-    // +Number(document.getElementById('feeder36_Total').textContent)+Number(document.getElementById('feeder46_Total').textContent);
 
     // Total Zero Sequence Current TOTAL CONSUMSION
     document.getElementById('total7_Total').textContent = 
-    Number(document.getElementById('feeder17_Total').textContent) +Number(document.getElementById('feeder27_Total').textContent)
-    +Number(document.getElementById('feeder37_Total').textContent)+Number(document.getElementById('feeder47_Total').textContent);
+    ( parseFloat(formattedValues[20]) + parseFloat(formattedValues[21]) + parseFloat(formattedValues[22]) + parseFloat(formattedValues[48])
+    + parseFloat(formattedValues[49]) + parseFloat(formattedValues[50]) + parseFloat(formattedValues[76]) + parseFloat(formattedValues[77]) 
+    + parseFloat(formattedValues[78]) + parseFloat(formattedValues[104]) + parseFloat(formattedValues[105]) + parseFloat(formattedValues[106]) ).toFixed(2);
 
     // Total Current Unbalance TOTAL CONSUMSION
     document.getElementById('total8_Total').textContent = 
-    Number(document.getElementById('feeder18_Total').textContent) +Number(document.getElementById('feeder28_Total').textContent)
-    +Number(document.getElementById('feeder38_Total').textContent)+Number(document.getElementById('feeder48_Total').textContent);
+    ( (parseFloat(formattedValues[23]) + parseFloat(formattedValues[24]) + parseFloat(formattedValues[25]) + parseFloat(formattedValues[51])
+    + parseFloat(formattedValues[52]) + parseFloat(formattedValues[53]) + parseFloat(formattedValues[79]) + parseFloat(formattedValues[80]) 
+    + parseFloat(formattedValues[81]) + parseFloat(formattedValues[107]) + parseFloat(formattedValues[108]) + parseFloat(formattedValues[109]))*(0.1) ).toFixed(2);
 
     // Total Energy TOTAL CONSUMSION
     document.getElementById('total9_Total').textContent = 
-    Number(document.getElementById('feeder19_Total').textContent) +Number(document.getElementById('feeder29_Total').textContent)
-    +Number(document.getElementById('feeder39_Total').textContent)+Number(document.getElementById('feeder49_Total').textContent);
+    ( parseFloat(formattedValues[26]) + parseFloat(formattedValues[27]) + parseFloat(formattedValues[28]) + parseFloat(formattedValues[54])
+    + parseFloat(formattedValues[55]) + parseFloat(formattedValues[56]) + parseFloat(formattedValues[82]) + parseFloat(formattedValues[83]) 
+    + parseFloat(formattedValues[84]) + parseFloat(formattedValues[110]) + parseFloat(formattedValues[111]) + parseFloat(formattedValues[112]) ).toFixed(2);
 }
 
      
