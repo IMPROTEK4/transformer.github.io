@@ -231,14 +231,17 @@
   display: block;
   position: relative;
   margin: auto;
+  height: 1417px;
+  width: 1900px;
+  /* background-color: greenyellow; */
 }
     
 
 /* ------Contain Midle------ */
 .midlebar{
   width: 1360px;
-  height: 750px;
-  /* position: relative; */
+  height: 1417px;
+  position: relative;
   display: block;
   align-items: center;
   margin: auto;
