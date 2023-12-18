@@ -35,7 +35,7 @@ function onConnect() {
     // Once a connection has been made, make a subscription and send a message.
     console.log("onConnect");
     connection_status = true ;
-    // alert("Connect to server is success.")
+    alert("Connect to server is success.")
 
     const textBox = document.getElementById('box_user_name');
     const connectButton = document.getElementById('button_connect');
@@ -500,14 +500,13 @@ function onConnectionLost(responseObject) {
 function onMessageArrived(message) {
   console.log("onMessageArrived:"+message.payloadString);
 
-    
     const values = message.payloadString.split(',');
 
      // Iterate through each value and cut only two digits behind the period
-  const formattedValues = values.map(value => {
-    // Parse the value to a float and use toFixed to cut to two digits behind the period
-    return parseFloat(value).toFixed(2);
-  });
+    const formattedValues = values.map(value => {
+      // Parse the value to a float and use toFixed to cut to two digits behind the period
+      return parseFloat(value).toFixed(2);
+    });
   
 
     // Allowed location
@@ -519,197 +518,218 @@ function onMessageArrived(message) {
 
     // Location of Transformer
     document.getElementById('openGoogleMap').value = values[0] || '';
-    document.getElementById('feeder11_phaseA').textContent = formattedValues[2] || '';
-    document.getElementById('feeder11_phaseB').textContent = formattedValues[3] || '';
-    document.getElementById('feeder11_phaseC').textContent = formattedValues[4] || '';
+    document.getElementById('feeder11_phaseA').textContent = ( parseFloat(formattedValues[2])).toFixed(2) || '';
+    document.getElementById('feeder11_phaseB').textContent = ( parseFloat(formattedValues[3])).toFixed(2) || '';
+    document.getElementById('feeder11_phaseC').textContent = ( parseFloat(formattedValues[4])).toFixed(2) || '';
 
     // Convert strings to numbers and add them and Fixed 2 string (Example: 12.123 => 12.12)
     // (parseFloat(formattedValues[2]) + parseFloat(formattedValues[3]) + parseFloat(formattedValues[4])).toFixed(2);
-    document.getElementById('feeder11_Total').textContent = ( parseFloat(formattedValues[2]) + parseFloat(formattedValues[3]) + parseFloat(formattedValues[4])).toFixed(2);
+    document.getElementById('feeder11_Total').textContent = ( parseFloat(formattedValues[2]) 
+    + parseFloat(formattedValues[3]) + parseFloat(formattedValues[4])).toFixed(2);
     
-    document.getElementById('feeder12_phaseA').textContent = formattedValues[5] || '';
-    document.getElementById('feeder12_phaseB').textContent = formattedValues[6] || '';
-    document.getElementById('feeder12_phaseC').textContent = formattedValues[7] || '';
-    document.getElementById('feeder12_Total').textContent = ( parseFloat(formattedValues[5]) + parseFloat(formattedValues[6]) + parseFloat(formattedValues[7])).toFixed(2);
+    document.getElementById('feeder12_phaseA').textContent = ( parseFloat(formattedValues[5])).toFixed(2) || '';
+    document.getElementById('feeder12_phaseB').textContent = ( parseFloat(formattedValues[6])).toFixed(2) || '';
+    document.getElementById('feeder12_phaseC').textContent = ( parseFloat(formattedValues[7])).toFixed(2) || '';
+    document.getElementById('feeder12_Total').textContent = ( parseFloat(formattedValues[5]) 
+    + parseFloat(formattedValues[6]) + parseFloat(formattedValues[7])).toFixed(2);
     
-    document.getElementById('feeder13_phaseA').textContent = formattedValues[8] || '';
-    document.getElementById('feeder13_phaseB').textContent = formattedValues[9] || '';
-    document.getElementById('feeder13_phaseC').textContent = formattedValues[10] || '';
-    document.getElementById('feeder13_Total').textContent = ( parseFloat(formattedValues[8]) + parseFloat(formattedValues[9]) + parseFloat(formattedValues[10])).toFixed(2);
+    document.getElementById('feeder13_phaseA').textContent = ( parseFloat(formattedValues[8])).toFixed(2) || '';
+    document.getElementById('feeder13_phaseB').textContent = ( parseFloat(formattedValues[9])).toFixed(2) || '';
+    document.getElementById('feeder13_phaseC').textContent = ( parseFloat(formattedValues[10])).toFixed(2) || '';
+    document.getElementById('feeder13_Total').textContent = ( parseFloat(formattedValues[8]) 
+    + parseFloat(formattedValues[9]) + parseFloat(formattedValues[10])).toFixed(2);
     
-    document.getElementById('feeder14_phaseA').textContent = formattedValues[11] || '';
-    document.getElementById('feeder14_phaseB').textContent = formattedValues[12] || '';
-    document.getElementById('feeder14_phaseC').textContent = formattedValues[13] || '';
-    // document.getElementById('feeder14_Total').textContent = ( parseFloat(formattedValues[11]) + parseFloat(formattedValues[12]) + parseFloat(formattedValues[13])).toFixed(2);
+    document.getElementById('feeder14_phaseA').textContent = ( parseFloat(formattedValues[11])).toFixed(2) || '';
+    document.getElementById('feeder14_phaseB').textContent = ( parseFloat(formattedValues[12])).toFixed(2) || '';
+    document.getElementById('feeder14_phaseC').textContent = ( parseFloat(formattedValues[13])).toFixed(2) || '';
     
-    document.getElementById('feeder15_phaseA').textContent = formattedValues[14] || '';
-    document.getElementById('feeder15_phaseB').textContent = formattedValues[15] || '';
-    document.getElementById('feeder15_phaseC').textContent = formattedValues[16] || '';
-    document.getElementById('feeder15_Total').textContent = ( parseFloat(formattedValues[14]) + parseFloat(formattedValues[15]) + parseFloat(formattedValues[16])).toFixed(2);
+    document.getElementById('feeder15_phaseA').textContent = ( parseFloat(formattedValues[14])).toFixed(2) || '';
+    document.getElementById('feeder15_phaseB').textContent = ( parseFloat(formattedValues[15])).toFixed(2) || '';
+    document.getElementById('feeder15_phaseC').textContent = ( parseFloat(formattedValues[16])).toFixed(2) || '';
+    document.getElementById('feeder15_Total').textContent = ( parseFloat(formattedValues[14]) 
+    + parseFloat(formattedValues[15]) + parseFloat(formattedValues[16])).toFixed(2);
     
-    document.getElementById('feeder16_phaseA').textContent = formattedValues[17] || '';
-    document.getElementById('feeder16_phaseB').textContent = formattedValues[18] || '';
-    document.getElementById('feeder16_phaseC').textContent = formattedValues[19] || '';
-    // document.getElementById('feeder16_Total').textContent = ( parseFloat(formattedValues[17]) + parseFloat(formattedValues[18]) + parseFloat(formattedValues[19])).toFixed(2);
+    document.getElementById('feeder16_phaseA').textContent = ( parseFloat(formattedValues[17])).toFixed(2) || '';
+    document.getElementById('feeder16_phaseB').textContent = ( parseFloat(formattedValues[18])).toFixed(2) || '';
+    document.getElementById('feeder16_phaseC').textContent = ( parseFloat(formattedValues[19])).toFixed(2) || '';
     
-    document.getElementById('feeder17_phaseA').textContent = formattedValues[20] || '';
-    document.getElementById('feeder17_phaseB').textContent = formattedValues[21] || '';
-    document.getElementById('feeder17_phaseC').textContent = formattedValues[22] || '';
-    document.getElementById('feeder17_Total').textContent = ( parseFloat(formattedValues[20]) + parseFloat(formattedValues[21]) + parseFloat(formattedValues[22])).toFixed(2);
+    document.getElementById('feeder17_phaseA').textContent = ( parseFloat(formattedValues[20])).toFixed(2) || '';
+    document.getElementById('feeder17_phaseB').textContent = ( parseFloat(formattedValues[21])).toFixed(2) || '';
+    document.getElementById('feeder17_phaseC').textContent = ( parseFloat(formattedValues[22])).toFixed(2) || '';
+    document.getElementById('feeder17_Total').textContent = ( parseFloat(formattedValues[20]) 
+    + parseFloat(formattedValues[21]) + parseFloat(formattedValues[22])).toFixed(2);
     
-    document.getElementById('feeder18_phaseA').textContent = formattedValues[23]*(0.1) || '';
-    document.getElementById('feeder18_phaseB').textContent = formattedValues[24]*(0.1) || '';
-    document.getElementById('feeder18_phaseC').textContent = formattedValues[25]*(0.1) || '';
-    document.getElementById('feeder18_Total').textContent = ( (parseFloat(formattedValues[23]) + parseFloat(formattedValues[24]) + parseFloat(formattedValues[25]))*(0.1)).toFixed(2);
+    // feeder18_phaseA.value = ;
+    document.getElementById('feeder18_phaseA').textContent = (parseFloat(formattedValues[23])*(0.1)).toFixed(2) || '' ;
+    document.getElementById('feeder18_phaseB').textContent = ( parseFloat(formattedValues[24])*(0.1)).toFixed(2) || '';
+    document.getElementById('feeder18_phaseC').textContent = ( parseFloat(formattedValues[25])*(0.1)).toFixed(2) || '';
+    document.getElementById('feeder18_Total').textContent = ( (parseFloat(formattedValues[23]) 
+    + parseFloat(formattedValues[24]) + parseFloat(formattedValues[25]))*(0.1)).toFixed(2);
     
-    document.getElementById('feeder19_phaseA').textContent = formattedValues[26] || '';
-    document.getElementById('feeder19_phaseB').textContent = formattedValues[27] || '';
-    document.getElementById('feeder19_phaseC').textContent = formattedValues[28] || '';
-    document.getElementById('feeder19_Total').textContent = ( parseFloat(formattedValues[26]) + parseFloat(formattedValues[27]) + parseFloat(formattedValues[28])).toFixed(2);
+    document.getElementById('feeder19_phaseA').textContent = ( parseFloat(formattedValues[26])).toFixed(2) || '';
+    document.getElementById('feeder19_phaseB').textContent = ( parseFloat(formattedValues[27])).toFixed(2) || '';
+    document.getElementById('feeder19_phaseC').textContent = ( parseFloat(formattedValues[28])).toFixed(2) || '';
+    document.getElementById('feeder19_Total').textContent = ( parseFloat(formattedValues[26]) 
+    + parseFloat(formattedValues[27]) + parseFloat(formattedValues[28])).toFixed(2);
   }
 
   // Display value for FEEDER 2:
   if (values[29]=='F2'){
-    document.getElementById('feeder21_phaseA').textContent = formattedValues[30] || '';
-    document.getElementById('feeder21_phaseB').textContent = formattedValues[31] || '';
-    document.getElementById('feeder21_phaseC').textContent = formattedValues[32] || '';
-    document.getElementById('feeder21_Total').textContent = ( parseFloat(formattedValues[30]) + parseFloat(formattedValues[31]) + parseFloat(formattedValues[32])).toFixed(2);
+    document.getElementById('feeder21_phaseA').textContent = ( parseFloat(formattedValues[30])).toFixed(2) || '';
+    document.getElementById('feeder21_phaseB').textContent = ( parseFloat(formattedValues[31])).toFixed(2) || '';
+    document.getElementById('feeder21_phaseC').textContent = ( parseFloat(formattedValues[32])).toFixed(2) || '';
+    document.getElementById('feeder21_Total').textContent = ( parseFloat(formattedValues[30]) 
+    + parseFloat(formattedValues[31]) + parseFloat(formattedValues[32])).toFixed(2);
     
-    document.getElementById('feeder22_phaseA').textContent = formattedValues[33] || '';
-    document.getElementById('feeder22_phaseB').textContent = formattedValues[34] || '';
-    document.getElementById('feeder22_phaseC').textContent = formattedValues[35] || '';
-    document.getElementById('feeder22_Total').textContent = ( parseFloat(formattedValues[33]) + parseFloat(formattedValues[34]) + parseFloat(formattedValues[35])).toFixed(2);
+    document.getElementById('feeder22_phaseA').textContent = ( parseFloat(formattedValues[33])).toFixed(2) || '';
+    document.getElementById('feeder22_phaseB').textContent = ( parseFloat(formattedValues[34])).toFixed(2) || '';
+    document.getElementById('feeder22_phaseC').textContent = ( parseFloat(formattedValues[35])).toFixed(2) || '';
+    document.getElementById('feeder22_Total').textContent = ( parseFloat(formattedValues[33]) 
+    + parseFloat(formattedValues[34]) + parseFloat(formattedValues[35])).toFixed(2);
     
-    document.getElementById('feeder23_phaseA').textContent = formattedValues[36] || '';
-    document.getElementById('feeder23_phaseB').textContent = formattedValues[37] || '';
-    document.getElementById('feeder23_phaseC').textContent = formattedValues[38] || '';
-    document.getElementById('feeder23_Total').textContent = ( parseFloat(formattedValues[36]) + parseFloat(formattedValues[37]) + parseFloat(formattedValues[38])).toFixed(2);
+    document.getElementById('feeder23_phaseA').textContent = ( parseFloat(formattedValues[36])).toFixed(2) || '';
+    document.getElementById('feeder23_phaseB').textContent = ( parseFloat(formattedValues[37])).toFixed(2) || '';
+    document.getElementById('feeder23_phaseC').textContent = ( parseFloat(formattedValues[38])).toFixed(2) || '';
+    document.getElementById('feeder23_Total').textContent = ( parseFloat(formattedValues[36]) 
+    + parseFloat(formattedValues[37]) + parseFloat(formattedValues[38])).toFixed(2);
     
-    document.getElementById('feeder24_phaseA').textContent = formattedValues[39] || '';
-    document.getElementById('feeder24_phaseB').textContent = formattedValues[40] || '';
-    document.getElementById('feeder24_phaseC').textContent = formattedValues[41] || '';
-    // document.getElementById('feeder24_Total').textContent = ( parseFloat(formattedValues[39]) + parseFloat(formattedValues[40]) + parseFloat(formattedValues[41])).toFixed(2);
+    document.getElementById('feeder24_phaseA').textContent = ( parseFloat(formattedValues[39])).toFixed(2) || '';
+    document.getElementById('feeder24_phaseB').textContent = ( parseFloat(formattedValues[40])).toFixed(2) || '';
+    document.getElementById('feeder24_phaseC').textContent = ( parseFloat(formattedValues[41])).toFixed(2) || '';
     
-    document.getElementById('feeder25_phaseA').textContent = formattedValues[42] || '';
-    document.getElementById('feeder25_phaseB').textContent = formattedValues[43] || '';
-    document.getElementById('feeder25_phaseC').textContent = formattedValues[44] || '';
-    document.getElementById('feeder25_Total').textContent = ( parseFloat(formattedValues[42]) + parseFloat(formattedValues[43]) + parseFloat(formattedValues[44])).toFixed(2);
+    document.getElementById('feeder25_phaseA').textContent = ( parseFloat(formattedValues[42])).toFixed(2) || '';
+    document.getElementById('feeder25_phaseB').textContent = ( parseFloat(formattedValues[43])).toFixed(2) || '';
+    document.getElementById('feeder25_phaseC').textContent = ( parseFloat(formattedValues[44])).toFixed(2) || '';
+    document.getElementById('feeder25_Total').textContent = ( parseFloat(formattedValues[42]) 
+    + parseFloat(formattedValues[43]) + parseFloat(formattedValues[44])).toFixed(2);
     
-    document.getElementById('feeder26_phaseA').textContent = formattedValues[45] || '';
-    document.getElementById('feeder26_phaseB').textContent = formattedValues[46] || '';
-    document.getElementById('feeder26_phaseC').textContent = formattedValues[47] || '';
-    // document.getElementById('feeder26_Total').textContent = ( parseFloat(formattedValues[45]) + parseFloat(formattedValues[46]) + parseFloat(formattedValues[47])).toFixed(2);
+    document.getElementById('feeder26_phaseA').textContent = ( parseFloat(formattedValues[45])).toFixed(2) || '';
+    document.getElementById('feeder26_phaseB').textContent = ( parseFloat(formattedValues[46])).toFixed(2) || '';
+    document.getElementById('feeder26_phaseC').textContent = ( parseFloat(formattedValues[47])).toFixed(2) || '';
     
-    document.getElementById('feeder27_phaseA').textContent = formattedValues[48] || '';
-    document.getElementById('feeder27_phaseB').textContent = formattedValues[49] || '';
-    document.getElementById('feeder27_phaseC').textContent = formattedValues[50] || '';
-    document.getElementById('feeder27_Total').textContent = ( parseFloat(formattedValues[48]) + parseFloat(formattedValues[49]) + parseFloat(formattedValues[50])).toFixed(2);
+    document.getElementById('feeder27_phaseA').textContent = ( parseFloat(formattedValues[48])).toFixed(2) || '';
+    document.getElementById('feeder27_phaseB').textContent = ( parseFloat(formattedValues[49])).toFixed(2) || '';
+    document.getElementById('feeder27_phaseC').textContent = ( parseFloat(formattedValues[50])).toFixed(2) || '';
+    document.getElementById('feeder27_Total').textContent = ( parseFloat(formattedValues[48]) 
+    + parseFloat(formattedValues[49]) + parseFloat(formattedValues[50])).toFixed(2);
     
-    document.getElementById('feeder28_phaseA').textContent = formattedValues[51]*(0.1) || '';
-    document.getElementById('feeder28_phaseB').textContent = formattedValues[52]*(0.1) || '';
-    document.getElementById('feeder28_phaseC').textContent = formattedValues[53]*(0.1) || '';
-    document.getElementById('feeder28_Total').textContent = ( (parseFloat(formattedValues[51]) + parseFloat(formattedValues[52]) + parseFloat(formattedValues[53]))*(0.1)).toFixed(2);
+    document.getElementById('feeder28_phaseA').textContent = ( parseFloat(formattedValues[51])*(0.1)).toFixed(2) || '';
+    document.getElementById('feeder28_phaseB').textContent = ( parseFloat(formattedValues[52])*(0.1)).toFixed(2) || '';
+    document.getElementById('feeder28_phaseC').textContent = ( parseFloat(formattedValues[53])*(0.1)).toFixed(2) || '';
+    document.getElementById('feeder28_Total').textContent = ( (parseFloat(formattedValues[51]) 
+    + parseFloat(formattedValues[52]) + parseFloat(formattedValues[53]))*(0.1)).toFixed(2);
     
-    document.getElementById('feeder29_phaseA').textContent = formattedValues[54] || '';
-    document.getElementById('feeder29_phaseB').textContent = formattedValues[55] || '';
-    document.getElementById('feeder29_phaseC').textContent = formattedValues[56] || '';
-    document.getElementById('feeder29_Total').textContent = ( parseFloat(formattedValues[54]) + parseFloat(formattedValues[55]) + parseFloat(formattedValues[56])).toFixed(2);
+    document.getElementById('feeder29_phaseA').textContent = ( parseFloat(formattedValues[54])).toFixed(2) || '';
+    document.getElementById('feeder29_phaseB').textContent = ( parseFloat(formattedValues[55])).toFixed(2) || '';
+    document.getElementById('feeder29_phaseC').textContent = ( parseFloat(formattedValues[56])).toFixed(2) || '';
+    document.getElementById('feeder29_Total').textContent = ( parseFloat(formattedValues[54]) 
+    + parseFloat(formattedValues[55]) + parseFloat(formattedValues[56])).toFixed(2);
   }
 
   // Display value for FEEDER 3:
   if (values[57]=='F3'){
-    document.getElementById('feeder31_phaseA').textContent = formattedValues[58] || '';
-    document.getElementById('feeder31_phaseB').textContent = formattedValues[59] || '';
-    document.getElementById('feeder31_phaseC').textContent = formattedValues[60] || '';
-    document.getElementById('feeder31_Total').textContent = ( parseFloat(formattedValues[58]) + parseFloat(formattedValues[59]) + parseFloat(formattedValues[60])).toFixed(2);
+    document.getElementById('feeder31_phaseA').textContent = ( parseFloat(formattedValues[58])).toFixed(2) || '';
+    document.getElementById('feeder31_phaseB').textContent = ( parseFloat(formattedValues[59])).toFixed(2) || '';
+    document.getElementById('feeder31_phaseC').textContent = ( parseFloat(formattedValues[60])).toFixed(2) || '';
+    document.getElementById('feeder31_Total').textContent = ( parseFloat(formattedValues[58]) 
+    + parseFloat(formattedValues[59]) + parseFloat(formattedValues[60])).toFixed(2);
     
-    document.getElementById('feeder32_phaseA').textContent = formattedValues[61] || '';
-    document.getElementById('feeder32_phaseB').textContent = formattedValues[62] || '';
-    document.getElementById('feeder32_phaseC').textContent = formattedValues[63] || '';
-    document.getElementById('feeder32_Total').textContent = ( parseFloat(formattedValues[61]) + parseFloat(formattedValues[62]) + parseFloat(formattedValues[63])).toFixed(2);
+    document.getElementById('feeder32_phaseA').textContent = ( parseFloat(formattedValues[61])).toFixed(2) || '';
+    document.getElementById('feeder32_phaseB').textContent = ( parseFloat(formattedValues[62])).toFixed(2) || '';
+    document.getElementById('feeder32_phaseC').textContent = ( parseFloat(formattedValues[63])).toFixed(2) || '';
+    document.getElementById('feeder32_Total').textContent = ( parseFloat(formattedValues[61]) 
+    + parseFloat(formattedValues[62]) + parseFloat(formattedValues[63])).toFixed(2);
     
-    document.getElementById('feeder33_phaseA').textContent = formattedValues[64] || '';
-    document.getElementById('feeder33_phaseB').textContent = formattedValues[65] || '';
-    document.getElementById('feeder33_phaseC').textContent = formattedValues[66] || '';
-    document.getElementById('feeder33_Total').textContent = ( parseFloat(formattedValues[64]) + parseFloat(formattedValues[65]) + parseFloat(formattedValues[66])).toFixed(2);
+    document.getElementById('feeder33_phaseA').textContent = ( parseFloat(formattedValues[64])).toFixed(2) || '';
+    document.getElementById('feeder33_phaseB').textContent = ( parseFloat(formattedValues[65])).toFixed(2) || '';
+    document.getElementById('feeder33_phaseC').textContent = ( parseFloat(formattedValues[66])).toFixed(2) || '';
+    document.getElementById('feeder33_Total').textContent = ( parseFloat(formattedValues[64]) 
+    + parseFloat(formattedValues[65]) + parseFloat(formattedValues[66])).toFixed(2);
     
-    document.getElementById('feeder34_phaseA').textContent = formattedValues[67] || '';
-    document.getElementById('feeder34_phaseB').textContent = formattedValues[68] || '';
-    document.getElementById('feeder34_phaseC').textContent = formattedValues[69] || '';
-    // document.getElementById('feeder34_Total').textContent = ( parseFloat(formattedValues[67]) + parseFloat(formattedValues[68]) + parseFloat(formattedValues[69])).toFixed(2);
+    document.getElementById('feeder34_phaseA').textContent = ( parseFloat(formattedValues[67])).toFixed(2) || '';
+    document.getElementById('feeder34_phaseB').textContent = ( parseFloat(formattedValues[68])).toFixed(2) || '';
+    document.getElementById('feeder34_phaseC').textContent = ( parseFloat(formattedValues[69])).toFixed(2) || '';
     
-    document.getElementById('feeder35_phaseA').textContent = formattedValues[70] || '';
-    document.getElementById('feeder35_phaseB').textContent = formattedValues[71] || '';
-    document.getElementById('feeder35_phaseC').textContent = formattedValues[72] || '';
-    document.getElementById('feeder35_Total').textContent = ( parseFloat(formattedValues[70]) + parseFloat(formattedValues[71]) + parseFloat(formattedValues[72])).toFixed(2);
+    document.getElementById('feeder35_phaseA').textContent = ( parseFloat(formattedValues[70])).toFixed(2) || '';
+    document.getElementById('feeder35_phaseB').textContent = ( parseFloat(formattedValues[71])).toFixed(2) || '';
+    document.getElementById('feeder35_phaseC').textContent = ( parseFloat(formattedValues[72])).toFixed(2) || '';
+    document.getElementById('feeder35_Total').textContent = ( parseFloat(formattedValues[70]) 
+    + parseFloat(formattedValues[71]) + parseFloat(formattedValues[72])).toFixed(2);
     
-    document.getElementById('feeder36_phaseA').textContent = formattedValues[73] || '';
-    document.getElementById('feeder36_phaseB').textContent = formattedValues[74] || '';
-    document.getElementById('feeder36_phaseC').textContent = formattedValues[75] || '';
-    // document.getElementById('feeder36_Total').textContent = ( parseFloat(formattedValues[73]) + parseFloat(formattedValues[74]) + parseFloat(formattedValues[75])).toFixed(2);
+    document.getElementById('feeder36_phaseA').textContent = ( parseFloat(formattedValues[73])).toFixed(2) || '';
+    document.getElementById('feeder36_phaseB').textContent = ( parseFloat(formattedValues[74])).toFixed(2) || '';
+    document.getElementById('feeder36_phaseC').textContent = ( parseFloat(formattedValues[75])).toFixed(2) || '';
     
-    document.getElementById('feeder37_phaseA').textContent = formattedValues[76] || '';
-    document.getElementById('feeder37_phaseB').textContent = formattedValues[77] || '';
-    document.getElementById('feeder37_phaseC').textContent = formattedValues[78] || '';
-    document.getElementById('feeder37_Total').textContent = ( parseFloat(formattedValues[76]) + parseFloat(formattedValues[77]) + parseFloat(formattedValues[78])).toFixed(2);
+    document.getElementById('feeder37_phaseA').textContent = ( parseFloat(formattedValues[76])).toFixed(2) || '';
+    document.getElementById('feeder37_phaseB').textContent = ( parseFloat(formattedValues[77])).toFixed(2) || '';
+    document.getElementById('feeder37_phaseC').textContent = ( parseFloat(formattedValues[78])).toFixed(2) || '';
+    document.getElementById('feeder37_Total').textContent = ( parseFloat(formattedValues[76]) 
+    + parseFloat(formattedValues[77]) + parseFloat(formattedValues[78])).toFixed(2);
     
-    document.getElementById('feeder38_phaseA').textContent = formattedValues[79]*(0.1) || '';
-    document.getElementById('feeder38_phaseB').textContent = formattedValues[80]*(0.1) || '';
-    document.getElementById('feeder38_phaseC').textContent = formattedValues[81]*(0.1) || '';
-    document.getElementById('feeder38_Total').textContent = ( (parseFloat(formattedValues[79]) + parseFloat(formattedValues[80]) + parseFloat(formattedValues[81]))*(0.1)).toFixed(2);
+    document.getElementById('feeder38_phaseA').textContent = ( parseFloat(formattedValues[79])*(0.1)).toFixed(2) || '';
+    document.getElementById('feeder38_phaseB').textContent = ( parseFloat(formattedValues[80])*(0.1)).toFixed(2) || '';
+    document.getElementById('feeder38_phaseC').textContent = ( parseFloat(formattedValues[81])*(0.1)).toFixed(2) || '';
+    document.getElementById('feeder38_Total').textContent = ( (parseFloat(formattedValues[79]) 
+    + parseFloat(formattedValues[80]) + parseFloat(formattedValues[81]))*(0.1)).toFixed(2);
     
-    document.getElementById('feeder39_phaseA').textContent = formattedValues[82] || '';
-    document.getElementById('feeder39_phaseB').textContent = formattedValues[83] || '';
-    document.getElementById('feeder39_phaseC').textContent = formattedValues[84] || '';
-    document.getElementById('feeder39_Total').textContent = ( parseFloat(formattedValues[82]) + parseFloat(formattedValues[83]) + parseFloat(formattedValues[84])).toFixed(2);
+    document.getElementById('feeder39_phaseA').textContent = ( parseFloat(formattedValues[82])).toFixed(2) || '';
+    document.getElementById('feeder39_phaseB').textContent = ( parseFloat(formattedValues[83])).toFixed(2) || '';
+    document.getElementById('feeder39_phaseC').textContent = ( parseFloat(formattedValues[84])).toFixed(2) || '';
+    document.getElementById('feeder39_Total').textContent = ( parseFloat(formattedValues[82]) 
+    + parseFloat(formattedValues[83]) + parseFloat(formattedValues[84])).toFixed(2);
   }
 
   // Display value for FEEDER 4:
   if (values[85]=='F4'){
-    document.getElementById('feeder41_phaseA').textContent = formattedValues[86] || '';
-    document.getElementById('feeder41_phaseB').textContent = formattedValues[87] || '';
-    document.getElementById('feeder41_phaseC').textContent = formattedValues[88] || '';
-    document.getElementById('feeder41_Total').textContent = ( parseFloat(formattedValues[86]) + parseFloat(formattedValues[87]) + parseFloat(formattedValues[88])).toFixed(2);
+    document.getElementById('feeder41_phaseA').textContent = ( parseFloat(formattedValues[86])).toFixed(2) || '';
+    document.getElementById('feeder41_phaseB').textContent = ( parseFloat(formattedValues[87])).toFixed(2) || '';
+    document.getElementById('feeder41_phaseC').textContent = ( parseFloat(formattedValues[88])).toFixed(2) || '';
+    document.getElementById('feeder41_Total').textContent = ( parseFloat(formattedValues[86]) 
+    + parseFloat(formattedValues[87]) + parseFloat(formattedValues[88])).toFixed(2);
     
-    document.getElementById('feeder42_phaseA').textContent = formattedValues[89] || '';
-    document.getElementById('feeder42_phaseB').textContent = formattedValues[90] || '';
-    document.getElementById('feeder42_phaseC').textContent = formattedValues[91] || '';
-    document.getElementById('feeder42_Total').textContent = ( parseFloat(formattedValues[89]) + parseFloat(formattedValues[90]) + parseFloat(formattedValues[91])).toFixed(2);
+    document.getElementById('feeder42_phaseA').textContent = ( parseFloat(formattedValues[89])).toFixed(2) || '';
+    document.getElementById('feeder42_phaseB').textContent = ( parseFloat(formattedValues[90])).toFixed(2) || '';
+    document.getElementById('feeder42_phaseC').textContent = ( parseFloat(formattedValues[91])).toFixed(2) || '';
+    document.getElementById('feeder42_Total').textContent = ( parseFloat(formattedValues[89]) 
+    + parseFloat(formattedValues[90]) + parseFloat(formattedValues[91])).toFixed(2);
     
-    document.getElementById('feeder43_phaseA').textContent = formattedValues[92] || '';
-    document.getElementById('feeder43_phaseB').textContent = formattedValues[93] || '';
-    document.getElementById('feeder43_phaseC').textContent = formattedValues[94] || '';
-    document.getElementById('feeder43_Total').textContent = ( parseFloat(formattedValues[92]) + parseFloat(formattedValues[93]) + parseFloat(formattedValues[94])).toFixed(2);
+    document.getElementById('feeder43_phaseA').textContent = ( parseFloat(formattedValues[92])).toFixed(2) || '';
+    document.getElementById('feeder43_phaseB').textContent = ( parseFloat(formattedValues[93])).toFixed(2) || '';
+    document.getElementById('feeder43_phaseC').textContent = ( parseFloat(formattedValues[94])).toFixed(2) || '';
+    document.getElementById('feeder43_Total').textContent = ( parseFloat(formattedValues[92]) 
+    + parseFloat(formattedValues[93]) + parseFloat(formattedValues[94])).toFixed(2);
     
-    document.getElementById('feeder44_phaseA').textContent = formattedValues[95] || '';
-    document.getElementById('feeder44_phaseB').textContent = formattedValues[96] || '';
-    document.getElementById('feeder44_phaseC').textContent = formattedValues[97] || '';
-    // document.getElementById('feeder44_Total').textContent = ( parseFloat(formattedValues[95]) + parseFloat(formattedValues[96]) + parseFloat(formattedValues[97])).toFixed(2);
+    document.getElementById('feeder44_phaseA').textContent = ( parseFloat(formattedValues[95])).toFixed(2) || '';
+    document.getElementById('feeder44_phaseB').textContent = ( parseFloat(formattedValues[96])).toFixed(2) || '';
+    document.getElementById('feeder44_phaseC').textContent = ( parseFloat(formattedValues[97])).toFixed(2) || ''; 
     
-    document.getElementById('feeder45_phaseA').textContent = formattedValues[98] || '';
-    document.getElementById('feeder45_phaseB').textContent = formattedValues[99] || '';
-    document.getElementById('feeder45_phaseC').textContent = formattedValues[100] || '';
-    document.getElementById('feeder45_Total').textContent = ( parseFloat(formattedValues[98]) + parseFloat(formattedValues[99]) + parseFloat(formattedValues[100])).toFixed(2);
+    document.getElementById('feeder45_phaseA').textContent = ( parseFloat(formattedValues[98])).toFixed(2) || '';
+    document.getElementById('feeder45_phaseB').textContent = ( parseFloat(formattedValues[99])).toFixed(2) || '';
+    document.getElementById('feeder45_phaseC').textContent = ( parseFloat(formattedValues[100])).toFixed(2) || '';
+    document.getElementById('feeder45_Total').textContent = ( parseFloat(formattedValues[98]) 
+    + parseFloat(formattedValues[99]) + parseFloat(formattedValues[100])).toFixed(2);
     
-    document.getElementById('feeder46_phaseA').textContent = formattedValues[101] || '';
-    document.getElementById('feeder46_phaseB').textContent = formattedValues[102] || '';
-    document.getElementById('feeder46_phaseC').textContent = formattedValues[103] || '';
-    // document.getElementById('feeder46_Total').textContent = ( parseFloat(formattedValues[101]) + parseFloat(formattedValues[102]) + parseFloat(formattedValues[103])).toFixed(2);
+    document.getElementById('feeder46_phaseA').textContent = ( parseFloat(formattedValues[101])).toFixed(2) || '';
+    document.getElementById('feeder46_phaseB').textContent = ( parseFloat(formattedValues[102])).toFixed(2) || '';
+    document.getElementById('feeder46_phaseC').textContent = ( parseFloat(formattedValues[103])).toFixed(2) || '';
     
-    document.getElementById('feeder47_phaseA').textContent = formattedValues[104] || '';
-    document.getElementById('feeder47_phaseB').textContent = formattedValues[105] || '';
-    document.getElementById('feeder47_phaseC').textContent = formattedValues[106] || '';
-    document.getElementById('feeder47_Total').textContent = ( parseFloat(formattedValues[104]) + parseFloat(formattedValues[105]) + parseFloat(formattedValues[106])).toFixed(2);
+    document.getElementById('feeder47_phaseA').textContent = ( parseFloat(formattedValues[104])).toFixed(2) || '';
+    document.getElementById('feeder47_phaseB').textContent = ( parseFloat(formattedValues[105])).toFixed(2) || '';
+    document.getElementById('feeder47_phaseC').textContent = ( parseFloat(formattedValues[106])).toFixed(2) || '';
+    document.getElementById('feeder47_Total').textContent = ( parseFloat(formattedValues[104]) 
+    + parseFloat(formattedValues[105]) + parseFloat(formattedValues[106])).toFixed(2);
     
-    document.getElementById('feeder48_phaseA').textContent = formattedValues[107]*(0.1) || '';
-    document.getElementById('feeder48_phaseB').textContent = formattedValues[108]*(0.1) || '';
-    document.getElementById('feeder48_phaseC').textContent = formattedValues[109]*(0.1) || '';
-    document.getElementById('feeder48_Total').textContent = ( (parseFloat(formattedValues[107]) + parseFloat(formattedValues[108]) + parseFloat(formattedValues[109]))*(0.1)).toFixed(2);
+    document.getElementById('feeder48_phaseA').textContent = ( parseFloat(formattedValues[107])*(0.1)).toFixed(2) || '';
+    document.getElementById('feeder48_phaseB').textContent = ( parseFloat(formattedValues[108])*(0.1)).toFixed(2) || '';
+    document.getElementById('feeder48_phaseC').textContent = ( parseFloat(formattedValues[109])*(0.1)).toFixed(2) || '';
+    document.getElementById('feeder48_Total').textContent = ( (parseFloat(formattedValues[107]) 
+    + parseFloat(formattedValues[108]) + parseFloat(formattedValues[109]))*(0.1)).toFixed(2);
     
-    document.getElementById('feeder49_phaseA').textContent = formattedValues[110] || '';
-    document.getElementById('feeder49_phaseB').textContent = formattedValues[111] || '';
-    document.getElementById('feeder49_phaseC').textContent = formattedValues[112] || '';
-    document.getElementById('feeder49_Total').textContent = ( parseFloat(formattedValues[110]) + parseFloat(formattedValues[111]) + parseFloat(formattedValues[112])).toFixed(2);
+    document.getElementById('feeder49_phaseA').textContent = ( parseFloat(formattedValues[110])).toFixed(2) || '';
+    document.getElementById('feeder49_phaseB').textContent = ( parseFloat(formattedValues[111])).toFixed(2) || '';
+    document.getElementById('feeder49_phaseC').textContent = ( parseFloat(formattedValues[112])).toFixed(2) || '';
+    document.getElementById('feeder49_Total').textContent = ( parseFloat(formattedValues[110]) 
+    + parseFloat(formattedValues[111]) + parseFloat(formattedValues[112])).toFixed(2);
   }
 
 
@@ -727,7 +747,7 @@ function onMessageArrived(message) {
     + parseFloat(formattedValues[64]) + parseFloat(formattedValues[92])).toFixed(2);
 
     // Total Voltage Phase A
-    document.getElementById('total4_phaseA').textContent = formattedValues[11] || '';
+    document.getElementById('total4_phaseA').textContent = ( parseFloat(formattedValues[11])).toFixed(2) || '';
 
     // Total Current Phase A
     document.getElementById('total5_phaseA').textContent = ( parseFloat(formattedValues[14]) + parseFloat(formattedValues[42]) 
@@ -766,7 +786,7 @@ function onMessageArrived(message) {
     + parseFloat(formattedValues[65]) + parseFloat(formattedValues[93])).toFixed(2); 
 
     // Total Voltage Phase B
-    document.getElementById('total4_phaseB').textContent = formattedValues[12] || '';
+    document.getElementById('total4_phaseB').textContent = ( parseFloat(formattedValues[12])).toFixed(2) || '';
 
     // Total Current Phase B
     document.getElementById('total5_phaseB').textContent = ( parseFloat(formattedValues[15]) + parseFloat(formattedValues[43]) 
@@ -804,7 +824,7 @@ function onMessageArrived(message) {
     + parseFloat(formattedValues[66]) + parseFloat(formattedValues[94])).toFixed(2); 
 
     // Total Voltage Phase C
-    document.getElementById('total4_phaseC').textContent = formattedValues[13] || ''; 
+    document.getElementById('total4_phaseC').textContent = ( parseFloat(formattedValues[13])).toFixed(2) || ''; 
 
     // Total Current Phase C
     document.getElementById('total5_phaseC').textContent = ( parseFloat(formattedValues[16]) + parseFloat(formattedValues[44]) 
