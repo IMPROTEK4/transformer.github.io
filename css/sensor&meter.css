@@ -2,7 +2,7 @@
   display: flex;
   margin: auto;
   background-color:deeppink;
-  width: 1900px;
+  width: 1880px;
   height: 100px;
   box-shadow: 1px 5px 5px;
 }
@@ -232,7 +232,7 @@
   position: relative;
   margin: auto;
   height: 1417px;
-  width: 1900px;
+  width: 1880px;
   /* background-color: greenyellow; */
 }
     
@@ -495,7 +495,7 @@
 
     .bottombar{
       height: 70px;
-      width: 1900px;
+      width: 1880px;
       margin: auto;
       margin-top: 30px;
       margin-left: -270px;
