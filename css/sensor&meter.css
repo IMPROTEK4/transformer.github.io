@@ -227,6 +227,13 @@
 
 
 
+.CONTAINT{
+  display: block;
+  position: relative;
+  margin: auto;
+}
+    
+
 /* ------Contain Midle------ */
 .midlebar{
   width: 1360px;
