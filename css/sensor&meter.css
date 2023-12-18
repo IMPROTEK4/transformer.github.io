@@ -504,7 +504,7 @@
       display: flex;
       justify-content: center;
       align-content: center;
-      box-shadow: 1px -5px  ;
+      box-shadow: 1px -5px 5px;
     }
 
     .bottombar #powerby{
