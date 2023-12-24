@@ -8,8 +8,7 @@
         <link rel="stylesheet" href="css/sensor&meter.css">
         <link rel="icon" href="IMPROTECHS.jpg">
         <script src="js/sensor&meter.js"></script>
-        <!-- <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script> -->
-    
+
     </head>
 
     <body>
@@ -17,7 +16,7 @@
             <div class="topbar_left">
                 <h2 id="label_tran_ID">Transformer ID:</h2>
                 <input type="text" id="box_tran_ID" placeholder="Input Topic" disabled>
-                <button id="button_read_data" disabled onclick="call_data()" ><span class="button_readdata">READ</span></button>
+                <button class="read" id="button_read_data" disabled onclick="call_data()" ><span class="button_readdata">READ</span></button>
                 <button id="button_stopread_data" disabled onclick="stop_data()" ><span class="button_stopreaddata">STOP</span></button>
             </div>
 
@@ -33,6 +32,7 @@
         </div>
 
     <div class="CONTAINT">
+
         <div class="midlebar">
             <div class="totaldata">
                 <div class="total_consumsion">
@@ -43,7 +43,7 @@
                         <hr style="width: 1338px; position: absolute;  margin-top: 80px;"/>
                     </div>
 
-
+                
                     <div class="bottom_total_consumsion">
                         <table class="table_consumsion" id="dataDisplay">
                             <tr>
@@ -59,11 +59,11 @@
                             <tr>
                                 <td class="parameter">Active Power</td>
                                 <td>W</td>
-                                <td id="total1_neutral"></td>
-                                <td id="total1_phaseA" ></td>
-                                <td id="total1_phaseB"></td>
-                                <td id="total1_phaseC"></td>
-                                <td id="total1_Total"></td>
+                                <td  id="total1_neutral"></td>
+                                <td  id="total1_phaseA" ></td>
+                                <td  id="total1_phaseB"></td>
+                                <td  id="total1_phaseC"></td>
+                                <td  id="total1_Total"></td>
                             </tr>
 
                             <tr>
@@ -154,13 +154,19 @@
             <div class="total_customer">
                 <div class="box_customer1">
                     <span class="feeder_name">FEEDER 1:</span>
-                    <!-- <span class="feeder_Id">ID: 000001</span> -->
+                        <button style="margin-left: 400px;">
+                            <a href="feeder1.html" target="_blank">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front text" > View Data
+                            </span></a>
+                        </button>
                     <hr style="width: 658px; position:absolute;  "/>
                     <table>
                         <tr>
                             <th class="units">Data Parameter</th>
                             <td>Unit</td>
-                            <td>Neutral</td>
+                            <!-- <td>Neutral</td> -->
                             <td>Phase A</td>
                             <td>Phase B</td>
                             <td>Phase C</td>
@@ -170,7 +176,7 @@
                         <tr>
                             <td class="parameter">Active Power</td>
                             <td>W</td>
-                            <td id="feeder11_neutral"></td>
+                            <!-- <td id="feeder11_neutral"></td> -->
                             <td id="feeder11_phaseA"></td>
                             <td id="feeder11_phaseB"></td>
                             <td id="feeder11_phaseC"></td>
@@ -180,7 +186,7 @@
                         <tr>
                             <td class="parameter">Reactive Power</td>
                             <td>VAR</td>
-                            <td id="feeder12_neutral"></td>
+                            <!-- <td id="feeder12_neutral"></td> -->
                             <td id="feeder12_phaseA"></td>
                             <td id="feeder12_phaseB"></td>
                             <td id="feeder12_phaseC"></td>
@@ -190,7 +196,7 @@
                         <tr>
                             <td class="parameter">Apparent</td>
                             <td>VA</td>
-                            <td id="feeder13_neutral"></td>
+                            <!-- <td id="feeder13_neutral"></td> -->
                             <td id="feeder13_phaseA"></td>
                             <td id="feeder13_phaseB"></td>
                             <td id="feeder13_phaseC"></td>
@@ -200,7 +206,7 @@
                         <tr>
                             <td class="parameter">Voltage</td>
                             <td>V</td>
-                            <td id="feeder14_neutral"></td>
+                            <!-- <td id="feeder14_neutral"></td> -->
                             <td id="feeder14_phaseA"></td>
                             <td id="feeder14_phaseB"></td>
                             <td id="feeder14_phaseC"></td>
@@ -210,7 +216,7 @@
                         <tr>
                             <td class="parameter">Current</td>
                             <td>A</td>
-                            <td id="feeder15_neutral"></td>
+                            <!-- <td id="feeder15_neutral"></td> -->
                             <td id="feeder15_phaseA"></td>
                             <td id="feeder15_phaseB"></td>
                             <td id="feeder15_phaseC"></td>
@@ -220,7 +226,7 @@
                         <tr>
                             <td class="parameter">Power Factor</td>
                             <td>PF</td>
-                            <td id="feeder16_neutral"></td>
+                            <!-- <td id="feeder16_neutral"></td> -->
                             <td id="feeder16_phaseA"></td>
                             <td id="feeder16_phaseB"></td>
                             <td id="feeder16_phaseC"></td>
@@ -230,7 +236,7 @@
                         <tr>
                             <td class="parameter">Zero Sequence Current</td>
                             <td>A</td>
-                            <td id="feeder17_neutral"></td>
+                            <!-- <td id="feeder17_neutral"></td> -->
                             <td id="feeder17_phaseA"></td>
                             <td id="feeder17_phaseB"></td>
                             <td id="feeder17_phaseC"></td>
@@ -240,7 +246,7 @@
                         <tr>
                             <td class="parameter">Current Unbalance</td>
                             <td></td>
-                            <td id="feeder18_neutral"></td>
+                            <!-- <td id="feeder18_neutral"></td> -->
                             <td id="feeder18_phaseA"></td>
                             <td id="feeder18_phaseB"></td>
                             <td id="feeder18_phaseC"></td>
@@ -250,7 +256,7 @@
                         <tr>
                             <td class="parameter">Energy</td>
                             <td>kWh</td>
-                            <td id="feeder19_neutral"></td>
+                            <!-- <td id="feeder19_neutral"></td> -->
                             <td id="feeder19_phaseA"></td>
                             <td id="feeder19_phaseB"></td>
                             <td id="feeder19_phaseC"></td>
@@ -261,13 +267,19 @@
 
                 <div class="box_customer2">
                     <span class="feeder_name">FEEDER 2:</span>
-                    <!-- <span class="feeder_Id">ID: 000001</span> -->
+                        <button style="margin-left: 400px;">
+                            <!-- <a href="" target=""> -->
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front text" > View Data
+                            </span></a>
+                        </button>
                     <hr style="width: 658px; position:absolute;  "/>
                     <table>
                         <tr>
                             <th class="units">Data Parameter</th>
                             <td>Unit</td>
-                            <td>Neutral</td>
+                            <!-- <td>Neutral</td> -->
                             <td>Phase A</td>
                             <td>Phase B</td>
                             <td>Phase C</td>
@@ -277,7 +289,7 @@
                         <tr>
                             <td class="parameter">Active Power</td>
                             <td>W</td>
-                            <td id="feeder21_neutral"></td>
+                            <!-- <td id="feeder21_neutral"></td> -->
                             <td id="feeder21_phaseA"></td>
                             <td id="feeder21_phaseB"></td>
                             <td id="feeder21_phaseC"></td>
@@ -287,7 +299,7 @@
                         <tr>
                             <td class="parameter">Reactive Power</td>
                             <td>VAR</td>
-                            <td id="feeder22_neutral"></td>
+                            <!-- <td id="feeder22_neutral"></td> -->
                             <td id="feeder22_phaseA"></td>
                             <td id="feeder22_phaseB"></td>
                             <td id="feeder22_phaseC"></td>
@@ -297,7 +309,7 @@
                         <tr>
                             <td class="parameter">Apparent</td>
                             <td>VA</td>
-                            <td id="feeder23_neutral"></td>
+                            <!-- <td id="feeder23_neutral"></td> -->
                             <td id="feeder23_phaseA"></td>
                             <td id="feeder23_phaseB"></td>
                             <td id="feeder23_phaseC"></td>
@@ -307,7 +319,7 @@
                         <tr>
                             <td class="parameter">Voltage</td>
                             <td>V</td>
-                            <td id="feeder24_neutral"></td>
+                            <!-- <td id="feeder24_neutral"></td> -->
                             <td id="feeder24_phaseA"></td>
                             <td id="feeder24_phaseB"></td>
                             <td id="feeder24_phaseC"></td>
@@ -317,7 +329,7 @@
                         <tr>
                             <td class="parameter">Current</td>
                             <td>A</td>
-                            <td id="feeder25_neutral"></td>
+                            <!-- <td id="feeder25_neutral"></td> -->
                             <td id="feeder25_phaseA"></td>
                             <td id="feeder25_phaseB"></td>
                             <td id="feeder25_phaseC"></td>
@@ -327,7 +339,7 @@
                         <tr>
                             <td class="parameter">Power Factor</td>
                             <td>PF</td>
-                            <td id="feeder26_neutral"></td>
+                            <!-- <td id="feeder26_neutral"></td> -->
                             <td id="feeder26_phaseA"></td>
                             <td id="feeder26_phaseB"></td>
                             <td id="feeder26_phaseC"></td>
@@ -337,7 +349,7 @@
                         <tr>
                             <td class="parameter">Zero Sequence Current</td>
                             <td>A</td>
-                            <td id="feeder27_neutral"></td>
+                            <!-- <td id="feeder27_neutral"></td> -->
                             <td id="feeder27_phaseA"></td>
                             <td id="feeder27_phaseB"></td>
                             <td id="feeder27_phaseC"></td>
@@ -347,7 +359,7 @@
                         <tr>
                             <td class="parameter">Current Unbalance</td>
                             <td></td>
-                            <td id="feeder28_neutral"></td>
+                            <!-- <td id="feeder28_neutral"></td> -->
                             <td id="feeder28_phaseA"></td>
                             <td id="feeder28_phaseB"></td>
                             <td id="feeder28_phaseC"></td>
@@ -357,7 +369,7 @@
                         <tr>
                             <td class="parameter">Energy</td>
                             <td>kWh</td>
-                            <td id="feeder29_neutral"></td>
+                            <!-- <td id="feeder29_neutral"></td> -->
                             <td id="feeder29_phaseA"></td>
                             <td id="feeder29_phaseB"></td>
                             <td id="feeder29_phaseC"></td>
@@ -368,13 +380,19 @@
 
                 <div class="box_customer3">
                     <span class="feeder_name">FEEDER 3:</span>
-                    <!-- <span class="feeder_Id">ID: 000001</span> -->
+                    <button style="margin-left: 400px;">
+                        <!-- <a href="" target=""> -->
+                        <span class="shadow"></span>
+                        <span class="edge"></span>
+                        <span class="front text" > View Data
+                        </span></a>
+                    </button>
                     <hr style="width: 658px; position:absolute;  "/>
                     <table>
                         <tr>
                             <th class="units">Data Parameter</th>
                             <td>Unit</td>
-                            <td>Neutral</td>
+                            <!-- <td>Neutral</td> -->
                             <td>Phase A</td>
                             <td>Phase B</td>
                             <td>Phase C</td>
@@ -384,7 +402,7 @@
                         <tr>
                             <td class="parameter">Active Power</td>
                             <td>W</td>
-                            <td id="feeder31_neutral"></td>
+                            <!-- <td id="feeder31_neutral"></td> -->
                             <td id="feeder31_phaseA"></td>
                             <td id="feeder31_phaseB"></td>
                             <td id="feeder31_phaseC"></td>
@@ -394,7 +412,7 @@
                         <tr>
                             <td class="parameter">Reactive Power</td>
                             <td>VAR</td>
-                            <td id="feeder32_neutral"></td>
+                            <!-- <td id="feeder32_neutral"></td> -->
                             <td id="feeder32_phaseA"></td>
                             <td id="feeder32_phaseB"></td>
                             <td id="feeder32_phaseC"></td>
@@ -404,7 +422,7 @@
                         <tr>
                             <td class="parameter">Apparent</td>
                             <td>VA</td>
-                            <td id="feeder33_neutral"></td>
+                            <!-- <td id="feeder33_neutral"></td> -->
                             <td id="feeder33_phaseA"></td>
                             <td id="feeder33_phaseB"></td>
                             <td id="feeder33_phaseC"></td>
@@ -414,7 +432,7 @@
                         <tr>
                             <td class="parameter">Voltage</td>
                             <td>V</td>
-                            <td id="feeder34_neutral"></td>
+                            <!-- <td id="feeder34_neutral"></td> -->
                             <td id="feeder34_phaseA"></td>
                             <td id="feeder34_phaseB"></td>
                             <td id="feeder34_phaseC"></td>
@@ -424,7 +442,7 @@
                         <tr>
                             <td class="parameter">Current</td>
                             <td>A</td>
-                            <td id="feeder35_neutral"></td>
+                            <!-- <td id="feeder35_neutral"></td> -->
                             <td id="feeder35_phaseA"></td>
                             <td id="feeder35_phaseB"></td>
                             <td id="feeder35_phaseC"></td>
@@ -434,7 +452,7 @@
                         <tr>
                             <td class="parameter">Power Factor</td>
                             <td>PF</td>
-                            <td id="feeder36_neutral"></td>
+                            <!-- <td id="feeder36_neutral"></td> -->
                             <td id="feeder36_phaseA"></td>
                             <td id="feeder36_phaseB"></td>
                             <td id="feeder36_phaseC"></td>
@@ -444,7 +462,7 @@
                         <tr>
                             <td class="parameter">Zero Sequence Current</td>
                             <td>A</td>
-                            <td id="feeder37_neutral"></td>
+                            <!-- <td id="feeder37_neutral"></td> -->
                             <td id="feeder37_phaseA"></td>
                             <td id="feeder37_phaseB"></td>
                             <td id="feeder37_phaseC"></td>
@@ -454,7 +472,7 @@
                         <tr>
                             <td class="parameter">Current Unbalance</td>
                             <td></td>
-                            <td id="feeder38_neutral"></td>
+                            <!-- <td id="feeder38_neutral"></td> -->
                             <td id="feeder38_phaseA"></td>
                             <td id="feeder38_phaseB"></td>
                             <td id="feeder38_phaseC"></td>
@@ -464,7 +482,7 @@
                         <tr>
                             <td class="parameter">Energy</td>
                             <td>kWh</td>
-                            <td id="feeder39_neutral"></td>
+                            <!-- <td id="feeder39_neutral"></td> -->
                             <td id="feeder39_phaseA"></td>
                             <td id="feeder39_phaseB"></td>
                             <td id="feeder39_phaseC"></td>
@@ -475,13 +493,19 @@
 
                 <div class="box_customer4">
                     <span class="feeder_name">FEEDER 4:</span>
-                    <!-- <span class="feeder_Id">ID: 000001</span> -->
+                        <button style="margin-left: 400px;">
+                            <!-- <a href="" target=""> -->
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front text" > View Data
+                            </span></a>
+                        </button>
                     <hr style="width: 658px; position:absolute;  "/>
                     <table>
                         <tr>
                             <th class="units">Data Parameter</th>
                             <td>Unit</td>
-                            <td>Neutral</td>
+                            <!-- <td>Neutral</td> -->
                             <td>Phase A</td>
                             <td>Phase B</td>
                             <td>Phase C</td>
@@ -491,7 +515,7 @@
                         <tr>
                             <td class="parameter">Active Power</td>
                             <td>W</td>
-                            <td id="feeder41_neutral"></td>
+                            <!-- <td id="feeder41_neutral"></td> -->
                             <td id="feeder41_phaseA"></td>
                             <td id="feeder41_phaseB"></td>
                             <td id="feeder41_phaseC"></td>
@@ -501,7 +525,7 @@
                         <tr>
                             <td class="parameter">Reactive Power</td>
                             <td>VAR</td>
-                            <td id="feeder42_neutral"></td>
+                            <!-- <td id="feeder42_neutral"></td> -->
                             <td id="feeder42_phaseA"></td>
                             <td id="feeder42_phaseB"></td>
                             <td id="feeder42_phaseC"></td>
@@ -511,7 +535,7 @@
                         <tr>
                             <td class="parameter">Apparent</td>
                             <td>VA</td>
-                            <td id="feeder43_neutral"></td>
+                            <!-- <td id="feeder43_neutral"></td> -->
                             <td id="feeder43_phaseA"></td>
                             <td id="feeder43_phaseB"></td>
                             <td id="feeder43_phaseC"></td>
@@ -521,7 +545,7 @@
                         <tr>
                             <td class="parameter">Voltage</td>
                             <td>V</td>
-                            <td id="feeder44_neutral"></td>
+                            <!-- <td id="feeder44_neutral"></td> -->
                             <td id="feeder44_phaseA"></td>
                             <td id="feeder44_phaseB"></td>
                             <td id="feeder44_phaseC"></td>
@@ -531,7 +555,7 @@
                         <tr>
                             <td class="parameter">Current</td>
                             <td>A</td>
-                            <td id="feeder45_neutral"></td>
+                            <!-- <td id="feeder45_neutral"></td> -->
                             <td id="feeder45_phaseA"></td>
                             <td id="feeder45_phaseB"></td>
                             <td id="feeder45_phaseC"></td>
@@ -541,7 +565,7 @@
                         <tr>
                             <td class="parameter">Power Factor</td>
                             <td>PF</td>
-                            <td id="feeder46_neutral"></td>
+                            <!-- <td id="feeder46_neutral"></td> -->
                             <td id="feeder46_phaseA"></td>
                             <td id="feeder46_phaseB"></td>
                             <td id="feeder46_phaseC"></td>
@@ -551,7 +575,7 @@
                         <tr>
                             <td class="parameter">Zero Sequence Current</td>
                             <td>A</td>
-                            <td id="feeder47_neutral"></td>
+                            <!-- <td id="feeder47_neutral"></td> -->
                             <td id="feeder47_phaseA"></td>
                             <td id="feeder47_phaseB"></td>
                             <td id="feeder47_phaseC"></td>
@@ -561,7 +585,7 @@
                         <tr>
                             <td class="parameter">Current Unbalance</td>
                             <td></td>
-                            <td id="feeder48_neutral"></td>
+                            <!-- <td id="feeder48_neutral"></td> -->
                             <td id="feeder48_phaseA"></td>
                             <td id="feeder48_phaseB"></td>
                             <td id="feeder48_phaseC"></td>
@@ -571,7 +595,7 @@
                         <tr>
                             <td class="parameter">Energy</td>
                             <td>kWh</td>
-                            <td id="feeder49_neutral"></td>
+                            <!-- <td id="feeder49_neutral"></td> -->
                             <td id="feeder49_phaseA"></td>
                             <td id="feeder49_phaseB"></td>
                             <td id="feeder49_phaseC"></td>
@@ -580,12 +604,15 @@
                     </table>
                 </div>
      
-                <div class="bottombar">
+                <div class="bottombar">  
                     <h2 id="powerby">PowerBy: IMPRO TEK <span>Contact Us: 098 267 326 Thlang Jen</span></h2>
                 </div>
+                
             </div>
         </div>
+
     </div>
+
         
         <script>
             const idInput = document.getElementById('box_user_name');
@@ -639,7 +666,11 @@
                 // Open Google Maps with the specified location
                 window.open('https://www.google.com/maps/place/' + inputLocation, '_blank');
             }
+
+
                             
         </script> 
+
+
     </body>
 </html>

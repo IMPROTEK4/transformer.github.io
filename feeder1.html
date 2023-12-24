@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Data Log</title>
+    <link rel="icon" href="IMPROTECHS.jpg">
+    <link rel="stylesheet" href="css/viewdata.css">
+    <!-- <script src="js/view.js"></script> -->
+</head>
+<body>
+    <div class="container">
+        <div class="topbar">       
+            <h2 id="label_title">FEEDER 1 DATA LOG</h2>
+        </div>
+
+        <div class="midlebar">
+            <!-- Active Power -->
+            <div class="active_power"><h3>Active Power(W)</h3>
+                <div class="phase_A">
+                    <h4>Phase A</h4>
+                    <textarea id="Textarea_ACT_phase_A"  readonly style="width: 71px; resize: none; height: 100%; background-color: azure; overflow: hidden;  text-align: center; color: black;" disabled></textarea>
+                </div>
+                <div class="phase_B">
+                    <h4>Phase B</h4>
+                    <textarea id="Textarea_ACT_phase_B"  readonly style="width: 71px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+                <div class="phase_C">
+                    <h4>Phase C</h4>
+                    <textarea id="Textarea_ACT_phase_C"  readonly style="width: 71.2px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+                <div class="total">
+                    <h4>Total</h4>
+                    <textarea id="Textarea_ACT_total"  readonly style="width: 71px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+            </div>
+
+            <!-- Reactive Power -->
+            <div class="reactive_power"><h3>Reactive Power(VAR)</h3>
+                <div class="phase_A">
+                    <h4>Phase A</h4>
+                    <textarea id="Textarea_REAC_phase_A" readonly style="width: 71px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+                <div class="phase_B">
+                    <h4>Phase B</h4>
+                    <textarea id="Textarea_REAC_phase_B" readonly style="width: 71px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+                <div class="phase_C">
+                    <h4>Phase C</h4>
+                    <textarea id="Textarea_REAC_phase_C" readonly style="width: 71.2px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+                <div class="total">
+                    <h4>Total</h4>
+                    <textarea id="Textarea_REAC_total" readonly style="width: 71px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+            </div>
+
+            <!-- Apparent Power -->
+            <div class="apparent_power"><h3>Apparent Power(VA)</h3>
+                <div class="phase_A">
+                    <h4>Phase A</h4>
+                    <textarea id="Textarea_APP_phase_A" readonly style="width: 71px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+                <div class="phase_B">
+                    <h4>Phase B</h4>
+                    <textarea id="Textarea_APP_phase_B" readonly style="width: 71px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+                <div class="phase_C">
+                    <h4>Phase C</h4>
+                    <textarea id="Textarea_APP_phase_C" readonly style="width: 71.2px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+                <div class="total">
+                    <h4>Total</h4>
+                    <textarea id="Textarea_APP_total" readonly style="width: 71px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+            </div>
+
+            <!-- Voltage -->
+            <div class="voltage"><h3>Voltage(V)</h3>
+                <div class="phase_A">
+                    <h4>Phase A</h4>
+                    <textarea id="Textarea_voltage_phase_A" readonly style="width: 71.4px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+                <div class="phase_B">
+                    <h4>Phase B</h4>
+                    <textarea id="Textarea_voltage_phase_B" readonly style="width: 70.6px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+                <div class="phase_C">
+                    <h4>Phase C</h4>
+                    <textarea id="Textarea_voltage_phase_C" readonly style="width: 71px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+            </div>
+
+            <!-- Current -->
+            <div class="current"><h3>Current(A)</h3>
+                <div class="phase_A">
+                    <h4>Phase A</h4>
+                    <textarea id="Textarea_current_phase_A" readonly style="width: 71px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+                <div class="phase_B">
+                    <h4>Phase B</h4>
+                    <textarea id="Textarea_current_phase_B" readonly style="width: 71px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+                <div class="phase_C">
+                    <h4>Phase C</h4>
+                    <textarea id="Textarea_current_phase_C" readonly style="width: 71.2px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+                <div class="total">
+                    <h4>Total</h4>
+                    <textarea id="Textarea_current_total" readonly style="width: 71px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+            </div>
+
+             <!-- Power Factor -->
+             <div class="power_factor"><h3>Power Factor(PF)</h3>
+                <div class="phase_A">
+                    <h4>Phase A</h4>
+                    <textarea id="Textarea_PF_phase_A" readonly style="width: 71.4px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+                <div class="phase_B">
+                    <h4>Phase B</h4>
+                    <textarea id="Textarea_PF_phase_B" readonly style="width: 70.6px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+                <div class="phase_C">
+                    <h4>Phase C</h4>
+                    <textarea id="Textarea_PF_phase_C" readonly style="width: 71px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+            </div>
+
+            <!-- Zero Sequence Current -->
+            <div class="zero_sequence_current"><h3>Zero Sequence Current(A)</h3>
+                <div class="total">
+                    <h4>Total</h4>
+                    <textarea id="Textarea_ZSC_total" readonly style="width: 96px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+            </div>
+
+            <!-- Current Unbalance -->
+            <div class="current_unbalance"><h3>Current Unbalance</h3>
+                <div class="total">
+                    <h4>Total</h4>
+                    <textarea id="Textarea_CU_total" readonly style="width: 96.6px; resize: none; height: 100%; background-color: azure; overflow: hidden; text-align: center; color: black;" disabled></textarea>
+                </div>
+            </div>
+
+            
+        </div>
+            
+        <div class="bottombar">
+
+        </div>
+        
+    </div>
+
+
+
+
+    <script>
+        // Create a new Broadcast Channel with a specific name
+        const channel1 = new BroadcastChannel('dataChannel1');
+        const channel2 = new BroadcastChannel('dataChannel2');
+        const channel3 = new BroadcastChannel('dataChannel3');
+        const channel4 = new BroadcastChannel('dataChannel4');
+
+        const channel5 = new BroadcastChannel('dataChannel5');
+        const channel6 = new BroadcastChannel('dataChannel6');
+        const channel7 = new BroadcastChannel('dataChannel7');
+        const channel8 = new BroadcastChannel('dataChannel8');
+
+        const channel9 = new BroadcastChannel('dataChannel9');
+        const channel10 = new BroadcastChannel('dataChannel10');
+        const channel11 = new BroadcastChannel('dataChannel11');
+        const channel12 = new BroadcastChannel('dataChannel12');
+
+        const channel13 = new BroadcastChannel('dataChannel13');
+        const channel14 = new BroadcastChannel('dataChannel14');
+        const channel15 = new BroadcastChannel('dataChannel15');
+
+        const channel16 = new BroadcastChannel('dataChannel16');
+        const channel17 = new BroadcastChannel('dataChannel17');
+        const channel18 = new BroadcastChannel('dataChannel18');
+        const channel19 = new BroadcastChannel('dataChannel19');
+
+        const channel20 = new BroadcastChannel('dataChannel20');
+        const channel21 = new BroadcastChannel('dataChannel21');
+        const channel22 = new BroadcastChannel('dataChannel22');
+
+        const channel23 = new BroadcastChannel('dataChannel23');
+
+        const channel24 = new BroadcastChannel('dataChannel24');
+
+
+        
+            // Listen for messages from other browsing contexts   // Update the input text box with the received data
+            channel1.onmessage = event => { (document.getElementById('Textarea_ACT_phase_A').textContent) += event.data + '\n'; }; 
+            channel2.onmessage = event => { (document.getElementById('Textarea_ACT_phase_B').textContent) += event.data + '\n'; };
+            channel3.onmessage = event => { (document.getElementById('Textarea_ACT_phase_C').textContent) += event.data + '\n'; };
+            channel4.onmessage = event => { (document.getElementById('Textarea_ACT_total').textContent) += event.data + '\n'; };
+
+            channel5.onmessage = event => { (document.getElementById('Textarea_REAC_phase_A').textContent) += event.data + '\n'; };
+            channel6.onmessage = event => { (document.getElementById('Textarea_REAC_phase_B').textContent) += event.data + '\n'; };
+            channel7.onmessage = event => { (document.getElementById('Textarea_REAC_phase_C').textContent) += event.data + '\n'; };
+            channel8.onmessage = event => { (document.getElementById('Textarea_REAC_total').textContent) += event.data + '\n'; };
+
+            channel9.onmessage = event => { (document.getElementById('Textarea_APP_phase_A').textContent) += event.data + '\n'; };
+            channel10.onmessage = event => { (document.getElementById('Textarea_APP_phase_B').textContent) += event.data + '\n'; };
+            channel11.onmessage = event => { (document.getElementById('Textarea_APP_phase_C').textContent) += event.data + '\n'; };
+            channel12.onmessage = event => { (document.getElementById('Textarea_APP_total').textContent) += event.data + '\n'; };
+
+            channel13.onmessage = event => { (document.getElementById('Textarea_voltage_phase_A').textContent) += event.data + '\n'; };
+            channel14.onmessage = event => { (document.getElementById('Textarea_voltage_phase_B').textContent) += event.data + '\n'; };
+            channel15.onmessage = event => { (document.getElementById('Textarea_voltage_phase_C').textContent) += event.data + '\n'; };
+
+            channel16.onmessage = event => { (document.getElementById('Textarea_current_phase_A').textContent) += event.data + '\n'; };
+            channel17.onmessage = event => { (document.getElementById('Textarea_current_phase_B').textContent) += event.data + '\n'; };
+            channel18.onmessage = event => { (document.getElementById('Textarea_current_phase_C').textContent) += event.data + '\n'; };
+            channel19.onmessage = event => { (document.getElementById('Textarea_current_total').textContent) += event.data + '\n'; };
+
+            channel20.onmessage = event => { (document.getElementById('Textarea_PF_phase_A').textContent) += event.data + '\n'; };
+            channel21.onmessage = event => { (document.getElementById('Textarea_PF_phase_B').textContent) += event.data + '\n'; };
+            channel22.onmessage = event => { (document.getElementById('Textarea_PF_phase_C').textContent) += event.data + '\n'; };
+
+            channel23.onmessage = event => { (document.getElementById('Textarea_ZSC_total').textContent) += event.data + '\n'; };
+
+            channel24.onmessage = event => { (document.getElementById('Textarea_CU_total').textContent) += event.data + '\n'; };
+  
+
+    </script>
+    
+</body>
+</html>

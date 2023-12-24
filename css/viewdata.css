@@ -1,0 +1,359 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    height: 1000px;
+    width: 1894px;                                                                                                                                                                                                                                                                                                                                                                                                                    
+    display: block;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: darkgray;
+}
+
+.container .topbar{
+    height: 100px;
+    width: 100%;
+    background-color: deeppink;
+}
+.container .topbar #label_title{
+    font-size: 40px;
+    font-weight: bold;
+    /* margin: auto; */
+    padding-top: 30px;
+    text-align: center;
+    color: aliceblue;
+}
+
+/* Midlebar */
+.container .midlebar{
+    height: 890px;
+    width: 1893px;
+    display: inline-flex;
+    position: absolute;
+    margin: auto;
+    margin-top: 5px;
+    justify-content: center;
+    align-content: center;
+    /* background-color: blue; */
+}
+h3{
+    border: 1px solid aliceblue;
+    margin-bottom: 5px;
+}
+h4{
+    border: 1px solid aliceblue;
+}
+.midlebar .active_power{
+    height: 890px;
+    width: 300px;
+    display: block;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    float: left;
+    /* margin-left: 4.5px; */
+    margin-bottom: 2px;
+    border: 2px solid gray;
+    /* background-color: greenyellow; */
+}
+.midlebar .active_power h3{
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+.midlebar .reactive_power{
+    height: 890px;
+    width: 300px;
+    display: block;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    float: left;
+    margin-left: 2px;
+    border: 2px solid gray;
+    /* background-color:darkgreen; */
+}
+.midlebar .reactive_power h3{
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+.midlebar .apparent_power{
+    height: 890px;
+    width: 300px;
+    display: block;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    float: left;
+    margin-left: 2px;
+    border: 2px solid gray;
+    /* background-color: yellow; */
+}
+.midlebar .apparent_power h3{
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+.midlebar .voltage{
+    height: 890px;
+    width: 223px;
+    display: block;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    float: left;
+    margin-left: 2px;
+    border: 2px solid gray;
+    /* background-color: aquamarine; */
+}
+.midlebar .voltage h3{
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+.midlebar .current{
+    height: 890px;
+    width: 300px;
+    display: block;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    float: left;
+    margin-left: 2px;
+    margin-right: 2px;
+    border: 2px solid gray;
+    /* background-color: purple; */
+}
+.midlebar .current h3{
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+.midlebar .power_factor{
+    height: 890px;
+    width: 223px;
+    display: block;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    float: left;
+    margin-right: 2px;
+    border: 2px solid gray;
+    /* background-color: orange; */
+}
+.midlebar .power_factor h3{
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+.midlebar .zero_sequence_current{
+    height: 890px;
+    width: 100px;
+    display: block;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    float: left;
+    margin-right: 2px;
+    border: 2px solid gray;
+    /* background-color:dodgerblue; */
+}
+.midlebar .current_unbalance{
+    height: 890px;
+    width: 100px;
+    display: block;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    float: left;
+    border: 2px solid gray;
+    /* background-color: gray; */
+}
+.midlebar .current_unbalance h3{
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+
+
+
+
+/* ----ACTIVE POWER---- */
+.active_power .phase_A{
+    height: 794px;
+    width: 73.2px;
+    float: left;
+    margin-right: 1px;
+    /* background-color: red; */
+}
+.active_power .phase_B{
+    height: 794px;
+    width: 73.2px;
+    float: left;
+    margin-right: 1px;
+    margin-left: 1px;
+    /* background-color: silver; */
+}
+.active_power .phase_C{
+    height: 794px;
+    width: 73.2px;
+    float: left;
+    margin-right: 1px;
+    margin-left: 1px;
+    /* background-color: yellow; */
+}
+.active_power .total{
+    height: 794px;
+    width: 73.2px;
+    float: left;
+    margin-left: 1px;
+    /* background-color: palevioletred; */
+}
+/* ----REACTIVE POWER---- */
+.reactive_power .phase_A{
+    height: 794px;
+    width: 73.2px;
+    float: left;
+    margin-right: 1px;
+    /* background-color: red; */
+}
+.reactive_power .phase_B{
+    height: 794px;
+    width: 73.2px;
+    float: left;
+    margin-right: 1px;
+    margin-left: 1px;
+    /* background-color: silver; */
+}
+.reactive_power .phase_C{
+    height: 794px;
+    width: 73.2px;
+    float: left;
+    margin-right: 1px;
+    margin-left: 1px;
+    /* background-color: yellow; */
+}
+.reactive_power .total{
+    height: 794px;
+    width: 73.2px;
+    float: left;
+    margin-left: 1px;
+    /* background-color: palevioletred; */
+}
+/* ----APPARENT POWER---- */
+.apparent_power .phase_A{
+    height: 794px;
+    width: 73.2px;
+    float: left;
+    margin-right: 1px;
+    /* background-color: red; */
+}
+.apparent_power .phase_B{
+    height: 794px;
+    width: 73.2px;
+    float: left;
+    margin-right: 1px;
+    margin-left: 1px;
+    /* background-color: silver; */
+}
+.apparent_power .phase_C{
+    height: 794px;
+    width: 73.2px;
+    float: left;
+    margin-right: 1px;
+    margin-left: 1px;
+    /* background-color: yellow; */
+}
+.apparent_power .total{
+    height: 794px;
+    width: 73.2px;
+    float: left;
+    margin-left: 1px;
+    /* background-color: palevioletred; */
+}
+/* ----VOLTAGE---- */
+.voltage .phase_A{
+    height: 794px;
+    width: 72.6px;
+    float: left;
+    margin-right: 1px;
+    /* background-color: red; */
+}
+.voltage .phase_B{
+    height: 794px;
+    width: 72.6px;
+    float: left;
+    margin-right: 1px;
+    margin-left: 1px;
+    /* background-color: silver; */
+}
+.voltage .phase_C{
+    height: 794px;
+    width: 72.6px;
+    float: left;
+    margin-left: 1px;
+    /* background-color: yellow; */
+}
+/* ----CURRENT---- */
+.current .phase_A{
+    height: 794px;
+    width: 73.2px;
+    float: left;
+    margin-right: 1px;
+    /* background-color: red; */
+}
+.current .phase_B{
+    height: 794px;
+    width: 73.2px;
+    float: left;
+    margin-right: 1px;
+    margin-left: 1px;
+    /* background-color: silver; */
+}
+.current .phase_C{
+    height: 794px;
+    width: 73.2px;
+    float: left;
+    margin-right: 1px;
+    margin-left: 1px;
+    /* background-color: yellow; */
+}
+.current .total{
+    height: 794px;
+    width: 73.2px;
+    float: left;
+    margin-left: 1px;
+    /* background-color: palevioletred; */
+}
+/* ----POWER FACTOR---- */
+.power_factor .phase_A{
+    height: 794px;
+    width: 72.6px;
+    float: left;
+    margin-right: 1px;
+    /* background-color: red; */
+}
+.power_factor .phase_B{
+    height: 794px;
+    width: 72.6px;
+    float: left;
+    margin-right: 1.05px;
+    margin-left: 1px;
+    /* background-color: silver; */
+}
+.power_factor .phase_C{
+    height: 794px;
+    width: 72.6px;
+    float: left;
+    margin-left: 1px;
+    /* background-color: yellow; */
+}
+/* ----ZERO SEQUENCE CURRENT---- */
+ .zero_sequence_current .total{
+    height: 794px;
+    width: 99px;
+    /* background-color: palevioletred; */
+}
+/* ----CURRENT UNBALANCE---- */
+.current_unbalance .total{
+    height: 794px;
+    width: 99px;
+    /* background-color: palevioletred; */
+}
