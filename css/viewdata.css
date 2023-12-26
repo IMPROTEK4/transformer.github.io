@@ -4,7 +4,7 @@
 }
 
 .container{
-    height: 1000px;
+    height: 955px;
     width: 1894px;                                                                                                                                                                                                                                                                                                                                                                                                                    
     display: block;
     margin: auto;
@@ -28,7 +28,7 @@
 
 /* Midlebar */
 .container .midlebar{
-    height: 890px;
+    height: 850px;
     width: 1893px;
     display: inline-flex;
     position: absolute;
@@ -46,7 +46,7 @@ h4{
     border: 1px solid aliceblue;
 }
 .midlebar .active_power{
-    height: 890px;
+    height: 845px;
     width: 300px;
     display: block;
     justify-content: center;
@@ -64,7 +64,7 @@ h4{
     padding-bottom: 22px;
 }
 .midlebar .reactive_power{
-    height: 890px;
+    height: 845px;
     width: 300px;
     display: block;
     justify-content: center;
@@ -80,7 +80,7 @@ h4{
     padding-bottom: 22px;
 }
 .midlebar .apparent_power{
-    height: 890px;
+    height: 845px;
     width: 300px;
     display: block;
     justify-content: center;
@@ -96,7 +96,7 @@ h4{
     padding-bottom: 22px;
 }
 .midlebar .voltage{
-    height: 890px;
+    height: 845px;
     width: 223px;
     display: block;
     justify-content: center;
@@ -112,7 +112,7 @@ h4{
     padding-bottom: 22px;
 }
 .midlebar .current{
-    height: 890px;
+    height: 845px;
     width: 300px;
     display: block;
     justify-content: center;
@@ -129,7 +129,7 @@ h4{
     padding-bottom: 22px;
 }
 .midlebar .power_factor{
-    height: 890px;
+    height: 845px;
     width: 223px;
     display: block;
     justify-content: center;
@@ -145,7 +145,7 @@ h4{
     padding-bottom: 22px;
 }
 .midlebar .zero_sequence_current{
-    height: 890px;
+    height: 845px;
     width: 100px;
     display: block;
     justify-content: center;
@@ -157,7 +157,7 @@ h4{
     /* background-color:dodgerblue; */
 }
 .midlebar .current_unbalance{
-    height: 890px;
+    height: 845px;
     width: 100px;
     display: block;
     justify-content: center;

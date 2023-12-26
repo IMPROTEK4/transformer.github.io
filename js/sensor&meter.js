@@ -77,25 +77,6 @@ function call_data(){
       console.log("Client Subscribbing")
     }
 
-    // DISPLAY ID OF TRANSFORMER
-    displayID = document.getElementById('box_tran_ID').value;
-      // displayID.style.backgroundColor ='greenyellow';
-    if(displayID=="TF1Data"){
-      document.getElementById('display_tran_ID').value='ID00001';
-    }
-
-    else if(displayID=="TF2"){
-      document.getElementById('display_tran_ID').value='ID00002';
-    }
-
-    else if(displayID=="TF3"){
-      document.getElementById('display_tran_ID').value='ID00003';
-    }
-
-    else if(displayID=="TF4"){
-      document.getElementById('display_tran_ID').value='ID00004';
-    }
-
   // ---Exchang Button Read Data
   const readlocked = document.getElementById('button_read_data');
     readlocked.disabled = true;
@@ -425,7 +406,6 @@ function onMessageArrived(message) {
 
 
   
-
     // Allowed location
     const inputLocation = document.getElementById('openGoogleMap');
     inputLocation.disabled = false;
@@ -788,6 +768,26 @@ function onMessageArrived(message) {
     + parseFloat(formattedValues[55]) + parseFloat(formattedValues[56]) + parseFloat(formattedValues[82]) + parseFloat(formattedValues[83])  
     + parseFloat(formattedValues[84]) + parseFloat(formattedValues[110]) + parseFloat(formattedValues[111]) + parseFloat(formattedValues[112]) ).toFixed(2);
 
+
+
+    // DISPLAY ID OF TRANSFORMER
+    displayID = document.getElementById('box_tran_ID').value;
+      // displayID.style.backgroundColor ='greenyellow';
+    if(displayID=="TF1Data"){
+      document.getElementById('display_tran_ID').value='ID00001';
+    }
+
+    else if(displayID=="TF2"){
+      document.getElementById('display_tran_ID').value='ID00002';
+    }
+
+    else if(displayID=="TF3"){
+      document.getElementById('display_tran_ID').value='ID00003';
+    }
+
+    else if(displayID=="TF4"){
+      document.getElementById('display_tran_ID').value='ID00004';
+    }
 
 
 
