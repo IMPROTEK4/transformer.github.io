@@ -4,7 +4,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Data Log Feeder1</title>
+    <title>View Data Log Feeder4</title>
     <link rel="icon" href="IMPROTECHS.jpg">
     <link rel="stylesheet" href="css/viewdata.css">
     <style>
@@ -62,7 +62,7 @@
                 <span class="button_top"> Reset Data Log
                 </span>
             </button>      
-            <span id="label_title">FEEDER 1 DATA LOG</span>
+            <span id="label_title">FEEDER 4 DATA LOG</span>
         </div>
 
         <div class="midlebar">
@@ -213,44 +213,44 @@
         // Create a new Broadcast Channel with a specific name
 
         // ---Active Power
-        const channel1 = new BroadcastChannel('dataChannel1');
-        const channel2 = new BroadcastChannel('dataChannel2');
-        const channel3 = new BroadcastChannel('dataChannel3');
-        const channel4 = new BroadcastChannel('dataChannel4');
+        const channel73 = new BroadcastChannel('dataChannel73');
+        const channel74 = new BroadcastChannel('dataChannel74');
+        const channel75 = new BroadcastChannel('dataChannel75');
+        const channel76 = new BroadcastChannel('dataChannel76');
 
         // ---Reactive Power
-        const channel5 = new BroadcastChannel('dataChannel5');
-        const channel6 = new BroadcastChannel('dataChannel6');
-        const channel7 = new BroadcastChannel('dataChannel7');
-        const channel8 = new BroadcastChannel('dataChannel8');
+        const channel77 = new BroadcastChannel('dataChannel77');
+        const channel78 = new BroadcastChannel('dataChannel78');
+        const channel79 = new BroadcastChannel('dataChannel79');
+        const channel80 = new BroadcastChannel('dataChannel80');
 
         // ---Apparent Power
-        const channel9 = new BroadcastChannel('dataChannel9');
-        const channel10 = new BroadcastChannel('dataChannel10');
-        const channel11 = new BroadcastChannel('dataChannel11');
-        const channel12 = new BroadcastChannel('dataChannel12');
+        const channel81 = new BroadcastChannel('dataChannel81');
+        const channel82 = new BroadcastChannel('dataChannel82');
+        const channel83 = new BroadcastChannel('dataChannel83');
+        const channel84 = new BroadcastChannel('dataChannel84');
 
         // ---Voltage
-        const channel13 = new BroadcastChannel('dataChannel13');
-        const channel14 = new BroadcastChannel('dataChannel14');
-        const channel15 = new BroadcastChannel('dataChannel15');
+        const channel85 = new BroadcastChannel('dataChannel85');
+        const channel86 = new BroadcastChannel('dataChannel86');
+        const channel87 = new BroadcastChannel('dataChannel87');
 
         // ---Current
-        const channel16 = new BroadcastChannel('dataChannel16');
-        const channel17 = new BroadcastChannel('dataChannel17');
-        const channel18 = new BroadcastChannel('dataChannel18');
-        const channel19 = new BroadcastChannel('dataChannel19');
+        const channel88 = new BroadcastChannel('dataChannel88');
+        const channel89 = new BroadcastChannel('dataChannel89');
+        const channel90 = new BroadcastChannel('dataChannel90');
+        const channel91 = new BroadcastChannel('dataChannel91');
 
         // ---Power Factor
-        const channel20 = new BroadcastChannel('dataChannel20');
-        const channel21 = new BroadcastChannel('dataChannel21');
-        const channel22 = new BroadcastChannel('dataChannel22');
+        const channel92 = new BroadcastChannel('dataChannel92');
+        const channel93 = new BroadcastChannel('dataChannel93');
+        const channel94 = new BroadcastChannel('dataChannel94');
 
         // ---Zero Sequence Current
-        const channel23 = new BroadcastChannel('dataChannel23');
+        const channel95 = new BroadcastChannel('dataChannel95');
 
         // ---Current Unbalance
-        const channel24 = new BroadcastChannel('dataChannel24');
+        const channel96 = new BroadcastChannel('dataChannel96');
 
 
 
@@ -260,7 +260,7 @@
         const dataDisplay1 = document.getElementById('Textarea_ACT_phase_A');
         let receivedMessages1 = 0;
         // Listen for messages from other browsing contexts
-        channel1.onmessage = event => {
+        channel73.onmessage = event => {
             // Display the received data in the textarea
             receivedMessages1++;
             if (receivedMessages1 <= 49) {
@@ -269,7 +269,7 @@
         };
         const dataDisplay2 = document.getElementById('Textarea_ACT_phase_B');
         let receivedMessages2 = 0;
-        channel2.onmessage = event => {
+        channel74.onmessage = event => {
             receivedMessages2++;
             if (receivedMessages2 <= 49) {
                 dataDisplay2.value += `${event.data}\n`;
@@ -277,7 +277,7 @@
         };
         const dataDisplay3 = document.getElementById('Textarea_ACT_phase_C');
         let receivedMessages3 = 0;
-        channel3.onmessage = event => {
+        channel75.onmessage = event => {
             receivedMessages3++;
             if (receivedMessages3 <= 49) {
                 dataDisplay3.value += `${event.data}\n`;
@@ -285,7 +285,7 @@
         };
         const dataDisplay4 = document.getElementById('Textarea_ACT_Total');
         let receivedMessages4 = 0;
-        channel4.onmessage = event => {
+        channel76.onmessage = event => {
             receivedMessages4++;
             if (receivedMessages4 <= 49) {
                 dataDisplay4.value += `${event.data}\n`;
@@ -296,7 +296,7 @@
         // ---Reactive Power
         const dataDisplay5 = document.getElementById('Textarea_REAC_phase_A');
         let receivedMessages5 = 0;
-        channel5.onmessage = event => {
+        channel77.onmessage = event => {
             receivedMessages5++;
             if (receivedMessages5 <= 49) {
                 dataDisplay5.value += `${event.data}\n`;
@@ -304,7 +304,7 @@
         };
         const dataDisplay6 = document.getElementById('Textarea_REAC_phase_B');
         let receivedMessages6 = 0;
-        channel6.onmessage = event => {
+        channel78.onmessage = event => {
             receivedMessages6++;
             if (receivedMessages6 <= 49) {
                 dataDisplay6.value += `${event.data}\n`;
@@ -312,7 +312,7 @@
         };
         const dataDisplay7 = document.getElementById('Textarea_REAC_phase_C');
         let receivedMessages7 = 0;
-        channel7.onmessage = event => {
+        channel79.onmessage = event => {
             receivedMessages7++;
             if (receivedMessages7 <= 49) {
                 dataDisplay7.value += `${event.data}\n`;
@@ -320,7 +320,7 @@
         };
         const dataDisplay8 = document.getElementById('Textarea_REAC_Total');
         let receivedMessages8 = 0;
-        channel8.onmessage = event => {
+        channel80.onmessage = event => {
             receivedMessages8++;
             if (receivedMessages8 <= 49) {
                 dataDisplay8.value += `${event.data}\n`;
@@ -331,7 +331,7 @@
         // ---Apparent Power
         const dataDisplay9 = document.getElementById('Textarea_APP_phase_A');
         let receivedMessages9 = 0;
-        channel9.onmessage = event => {
+        channel81.onmessage = event => {
             receivedMessages9++;
             if (receivedMessages9 <= 49) {
                 dataDisplay9.value += `${event.data}\n`;
@@ -339,7 +339,7 @@
         };
         const dataDisplay10 = document.getElementById('Textarea_APP_phase_B');
         let receivedMessages10 = 0;
-        channel10.onmessage = event => {
+        channel82.onmessage = event => {
             receivedMessages10++;
             if (receivedMessages10 <= 49) {
                 dataDisplay10.value += `${event.data}\n`;
@@ -347,7 +347,7 @@
         };
         const dataDisplay11 = document.getElementById('Textarea_APP_phase_C');
         let receivedMessages11 = 0;
-        channel11.onmessage = event => {
+        channel83.onmessage = event => {
             receivedMessages11++;
             if (receivedMessages11 <= 49) {
                 dataDisplay11.value += `${event.data}\n`;
@@ -355,7 +355,7 @@
         };
         const dataDisplay12 = document.getElementById('Textarea_APP_Total');
         let receivedMessages12 = 0;
-        channel12.onmessage = event => {
+        channel84.onmessage = event => {
             receivedMessages12++;
             if (receivedMessages12 <= 49) {
                 dataDisplay12.value += `${event.data}\n`;
@@ -366,7 +366,7 @@
         // ---Voltage
         const dataDisplay13 = document.getElementById('Textarea_voltage_phase_A');
         let receivedMessages13 = 0;
-        channel13.onmessage = event => {
+        channel85.onmessage = event => {
             receivedMessages13++;
             if (receivedMessages13 <= 49) {
                 dataDisplay13.value += `${event.data}\n`;
@@ -374,7 +374,7 @@
         };
         const dataDisplay14 = document.getElementById('Textarea_voltage_phase_B');
         let receivedMessages14 = 0;
-        channel14.onmessage = event => {
+        channel86.onmessage = event => {
             receivedMessages14++;
             if (receivedMessages14 <= 49) {
                 dataDisplay14.value += `${event.data}\n`;
@@ -382,7 +382,7 @@
         };
         const dataDisplay15 = document.getElementById('Textarea_voltage_phase_C');
         let receivedMessages15 = 0;
-        channel15.onmessage = event => {
+        channel87.onmessage = event => {
             receivedMessages15++;
             if (receivedMessages15 <= 49) {
                 dataDisplay15.value += `${event.data}\n`;
@@ -393,7 +393,7 @@
         // ---Current
         const dataDisplay16 = document.getElementById('Textarea_current_phase_A');
         let receivedMessages16 = 0;
-        channel16.onmessage = event => {
+        channel88.onmessage = event => {
             receivedMessages16++;
             if (receivedMessages16 <= 49) {
                 dataDisplay16.value += `${event.data}\n`;
@@ -401,7 +401,7 @@
         };
         const dataDisplay17 = document.getElementById('Textarea_current_phase_B');
         let receivedMessages17 = 0;
-        channel17.onmessage = event => {
+        channel89.onmessage = event => {
             receivedMessages17++;
             if (receivedMessages17 <= 49) {
                 dataDisplay17.value += `${event.data}\n`;
@@ -409,7 +409,7 @@
         };
         const dataDisplay18 = document.getElementById('Textarea_current_phase_C');
         let receivedMessages18 = 0;
-        channel18.onmessage = event => {
+        channel90.onmessage = event => {
             receivedMessages18++;
             if (receivedMessages18 <= 49) {
                 dataDisplay18.value += `${event.data}\n`;
@@ -417,7 +417,7 @@
         };
         const dataDisplay19 = document.getElementById('Textarea_current_Total');
         let receivedMessages19 = 0;
-        channel19.onmessage = event => {
+        channel91.onmessage = event => {
             receivedMessages19++;
             if (receivedMessages19 <= 49) {
                 dataDisplay19.value += `${event.data}\n`;
@@ -428,7 +428,7 @@
         // ---Power Factor
         const dataDisplay20 = document.getElementById('Textarea_PF_phase_A');
         let receivedMessages20 = 0;
-        channel20.onmessage = event => {
+        channel92.onmessage = event => {
             receivedMessages20++;
             if (receivedMessages20 <= 49) {
                 dataDisplay20.value += `${event.data}\n`;
@@ -436,7 +436,7 @@
         };
         const dataDisplay21 = document.getElementById('Textarea_PF_phase_B');
         let receivedMessages21 = 0;
-        channel21.onmessage = event => {
+        channel93.onmessage = event => {
             receivedMessages21++;
             if (receivedMessages21 <= 49) {
                 dataDisplay21.value += `${event.data}\n`;
@@ -444,7 +444,7 @@
         };
         const dataDisplay22 = document.getElementById('Textarea_PF_phase_C');
         let receivedMessages22 = 0;
-        channel22.onmessage = event => {
+        channel94.onmessage = event => {
             receivedMessages22++;
             if (receivedMessages22 <= 49) {
                 dataDisplay22.value += `${event.data}\n`;
@@ -455,7 +455,7 @@
         // ---Zero Sequence Current
         const dataDisplay23 = document.getElementById('Textarea_ZSC_Total');
         let receivedMessages23 = 0;
-        channel23.onmessage = event => {
+        channel95.onmessage = event => {
             receivedMessages23++;
             if (receivedMessages23 <= 49) {
                 dataDisplay23.value += `${event.data}\n`;
@@ -466,7 +466,7 @@
         // ---Current Unbalance
         const dataDisplay24 = document.getElementById('Textarea_CU_Total');
         let receivedMessages24 = 0;
-        channel24.onmessage = event => {
+        channel96.onmessage = event => {
             receivedMessages24++;
             if (receivedMessages24 <= 49) {
                 dataDisplay24.value += `${event.data}\n`;
@@ -516,7 +516,7 @@
 
             // ---Current Unbalance
             dataDisplay24.value = '';
-            receivedMessages = 0;
+            receivedMessages = 0; //Clear without Receiving again
         }
  
     </script>

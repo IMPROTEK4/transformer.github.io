@@ -373,8 +373,7 @@
       border: none;
       background: transparent;
       padding: 0;
-      width: 120px;
-      justify-content: end;
+      width: 130px;
       cursor: pointer;
       outline-offset: 4px;
       transition: filter 250ms;

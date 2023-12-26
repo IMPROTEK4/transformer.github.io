@@ -132,9 +132,11 @@ function stop_data() {
     readlocked.textContent = 'READ';
     readlocked.style.backgroundColor = 'rgb(218, 207, 207)' ;
 
-  // Locked location
-  const inputLocation = document.getElementById('openGoogleMap');
-  inputLocation.disabled = true;
+    // Locked location
+    const inputLocation = document.getElementById('openGoogleMap');
+    inputLocation.disabled = true;
+
+    
     
     console.log("Client Unsubscript");
     // ---Subscribe from the topic
@@ -789,45 +791,54 @@ function onMessageArrived(message) {
 
 
 
+    // Allow button
+    sendData1();
 
-    sendData();
+    sendData2();
+
+    sendData3();
+
+    sendData4();
 
   }
 
-     
+    // ----FEEDER 1 
  
   const channel1 = new BroadcastChannel('dataChannel1');
   const channel2 = new BroadcastChannel('dataChannel2');
   const channel3 = new BroadcastChannel('dataChannel3');
   const channel4 = new BroadcastChannel('dataChannel4');
+
   const channel5 = new BroadcastChannel('dataChannel5');
   const channel6 = new BroadcastChannel('dataChannel6');
   const channel7 = new BroadcastChannel('dataChannel7');
   const channel8 = new BroadcastChannel('dataChannel8');
+
   const channel9 = new BroadcastChannel('dataChannel9');
   const channel10 = new BroadcastChannel('dataChannel10');
   const channel11 = new BroadcastChannel('dataChannel11');
   const channel12 = new BroadcastChannel('dataChannel12');
+
   const channel13 = new BroadcastChannel('dataChannel13');
   const channel14 = new BroadcastChannel('dataChannel14');
   const channel15 = new BroadcastChannel('dataChannel15');
+
   const channel16 = new BroadcastChannel('dataChannel16');
   const channel17 = new BroadcastChannel('dataChannel17');
   const channel18 = new BroadcastChannel('dataChannel18');
   const channel19 = new BroadcastChannel('dataChannel19');
+
   const channel20 = new BroadcastChannel('dataChannel20');
   const channel21 = new BroadcastChannel('dataChannel21');
   const channel22 = new BroadcastChannel('dataChannel22');
+
   const channel23 = new BroadcastChannel('dataChannel23');
+
   const channel24 = new BroadcastChannel('dataChannel24');
 
-  let canSendData = true;
 
-  function sendData() {
-    if (!canSendData) {
-      console.log('Sending data is locked.');
-      return;
-    }
+  function sendData1() {
+    
     const dataToSend1 = document.getElementById('feeder11_phaseA').textContent;
     // Send the data to other browsing contexts
     channel1.postMessage(dataToSend1);
@@ -884,14 +895,291 @@ function onMessageArrived(message) {
 
     const dataToSend24 = document.getElementById('feeder18_Total').textContent;
     channel24.postMessage(dataToSend24);
-    
-    
-      
-      setTimeout(() => {
-        console.log('Sending data is locked.');
-        // Lock sending data forever after 1 minute
-        canSendData = false;
-      }, 120000); // 1 minute in milliseconds
-    
 }
+
+
+    // ----FEEDER 2
+  const channel25 = new BroadcastChannel('dataChannel25');
+  const channel26 = new BroadcastChannel('dataChannel26');
+  const channel27 = new BroadcastChannel('dataChannel27');
+  const channel28 = new BroadcastChannel('dataChannel28');
+
+  const channel29 = new BroadcastChannel('dataChannel29');
+  const channel30 = new BroadcastChannel('dataChannel30');
+  const channel31 = new BroadcastChannel('dataChannel31');
+  const channel32 = new BroadcastChannel('dataChannel32');
+
+  const channel33 = new BroadcastChannel('dataChannel33');
+  const channel34 = new BroadcastChannel('dataChannel34');
+  const channel35 = new BroadcastChannel('dataChannel35');
+  const channel36 = new BroadcastChannel('dataChannel36');
+
+  const channel37 = new BroadcastChannel('dataChannel37');
+  const channel38 = new BroadcastChannel('dataChannel38');
+  const channel39 = new BroadcastChannel('dataChannel39');
+
+  const channel40 = new BroadcastChannel('dataChannel40');
+  const channel41 = new BroadcastChannel('dataChannel41');
+  const channel42 = new BroadcastChannel('dataChannel42');
+  const channel43 = new BroadcastChannel('dataChannel43');
+
+  const channel44 = new BroadcastChannel('dataChannel44');
+  const channel45 = new BroadcastChannel('dataChannel45');
+  const channel46 = new BroadcastChannel('dataChannel46');
+
+  const channel47 = new BroadcastChannel('dataChannel47');
+
+  const channel48 = new BroadcastChannel('dataChannel48');
+
+
+  function sendData2() {
+    const dataToSend25 = document.getElementById('feeder21_phaseA').textContent;
+    // Send the data to other browsing contexts
+    channel25.postMessage(dataToSend25);
+    const dataToSend26 = document.getElementById('feeder21_phaseB').textContent;
+    channel26.postMessage(dataToSend26);
+    const dataToSend27 = document.getElementById('feeder21_phaseC').textContent;
+    channel27.postMessage(dataToSend27);
+    const dataToSend28 = document.getElementById('feeder21_Total').textContent;
+    channel28.postMessage(dataToSend28);
+
+    const dataToSend29 = document.getElementById('feeder22_phaseA').textContent;
+    channel29.postMessage(dataToSend29);
+    const dataToSend30 = document.getElementById('feeder22_phaseB').textContent;
+    channel30.postMessage(dataToSend30);
+    const dataToSend31 = document.getElementById('feeder22_phaseC').textContent;
+    channel31.postMessage(dataToSend31);
+    const dataToSend32 = document.getElementById('feeder22_Total').textContent;
+    channel32.postMessage(dataToSend32);
+
+    const dataToSend33 = document.getElementById('feeder23_phaseA').textContent;
+    channel33.postMessage(dataToSend33);
+    const dataToSend34 = document.getElementById('feeder23_phaseB').textContent;
+    channel34.postMessage(dataToSend34);
+    const dataToSend35 = document.getElementById('feeder23_phaseC').textContent;
+    channel35.postMessage(dataToSend35);
+    const dataToSend36 = document.getElementById('feeder23_Total').textContent;
+    channel36.postMessage(dataToSend36);
+
+    const dataToSend37 = document.getElementById('feeder24_phaseA').textContent;
+    channel37.postMessage(dataToSend37);
+    const dataToSend38 = document.getElementById('feeder24_phaseB').textContent;
+    channel38.postMessage(dataToSend38);
+    const dataToSend39 = document.getElementById('feeder24_phaseC').textContent;
+    channel39.postMessage(dataToSend39);
+
+    const dataToSend40 = document.getElementById('feeder25_phaseA').textContent;
+    channel40.postMessage(dataToSend40);
+    const dataToSend41 = document.getElementById('feeder25_phaseB').textContent;
+    channel41.postMessage(dataToSend41);
+    const dataToSend42 = document.getElementById('feeder25_phaseC').textContent;
+    channel42.postMessage(dataToSend42);
+    const dataToSend43 = document.getElementById('feeder25_Total').textContent;
+    channel43.postMessage(dataToSend43);
+
+    const dataToSend44 = document.getElementById('feeder26_phaseA').textContent;
+    channel44.postMessage(dataToSend44);
+    const dataToSend45 = document.getElementById('feeder26_phaseB').textContent;
+    channel45.postMessage(dataToSend45);
+    const dataToSend46 = document.getElementById('feeder26_phaseC').textContent;
+    channel46.postMessage(dataToSend46);
+
+    const dataToSend47 = document.getElementById('feeder27_Total').textContent;
+    channel47.postMessage(dataToSend47);
+
+    const dataToSend48 = document.getElementById('feeder28_Total').textContent;
+    channel48.postMessage(dataToSend48);
+}
+
+
+
+  // ----FEEDER 3 
+  const channel49 = new BroadcastChannel('dataChannel49');
+  const channel50 = new BroadcastChannel('dataChannel50');
+  const channel51 = new BroadcastChannel('dataChannel51');
+  const channel52 = new BroadcastChannel('dataChannel52');
+
+  const channel53 = new BroadcastChannel('dataChannel53');
+  const channel54 = new BroadcastChannel('dataChannel54');
+  const channel55 = new BroadcastChannel('dataChannel55');
+  const channel56 = new BroadcastChannel('dataChannel56');
+
+  const channel57 = new BroadcastChannel('dataChannel57');
+  const channel58 = new BroadcastChannel('dataChannel58');
+  const channel59 = new BroadcastChannel('dataChannel59');
+  const channel60 = new BroadcastChannel('dataChannel60');
+
+  const channel61 = new BroadcastChannel('dataChannel61');
+  const channel62 = new BroadcastChannel('dataChannel62');
+  const channel63 = new BroadcastChannel('dataChannel63');
+
+  const channel64 = new BroadcastChannel('dataChannel64');
+  const channel65 = new BroadcastChannel('dataChannel65');
+  const channel66 = new BroadcastChannel('dataChannel66');
+  const channel67 = new BroadcastChannel('dataChannel67');
+
+  const channel68 = new BroadcastChannel('dataChannel68');
+  const channel69 = new BroadcastChannel('dataChannel69');
+  const channel70 = new BroadcastChannel('dataChannel70');
+
+  const channel71 = new BroadcastChannel('dataChannel71');
+
+  const channel72 = new BroadcastChannel('dataChannel72');
+
+
+  function sendData3() {
+    
+    const dataToSend49 = document.getElementById('feeder31_phaseA').textContent;
+    // Send the data to other browsing contexts
+    channel49.postMessage(dataToSend49);
+    const dataToSend50 = document.getElementById('feeder31_phaseB').textContent;
+    channel50.postMessage(dataToSend50);
+    const dataToSend51 = document.getElementById('feeder31_phaseC').textContent;
+    channel51.postMessage(dataToSend51);
+    const dataToSend52 = document.getElementById('feeder31_Total').textContent;
+    channel52.postMessage(dataToSend52);
+
+    const dataToSend53 = document.getElementById('feeder32_phaseA').textContent;
+    channel53.postMessage(dataToSend53);
+    const dataToSend54 = document.getElementById('feeder32_phaseB').textContent;
+    channel54.postMessage(dataToSend54);
+    const dataToSend55 = document.getElementById('feeder32_phaseC').textContent;
+    channel55.postMessage(dataToSend55);
+    const dataToSend56 = document.getElementById('feeder32_Total').textContent;
+    channel56.postMessage(dataToSend56);
+
+    const dataToSend57 = document.getElementById('feeder33_phaseA').textContent;
+    channel57.postMessage(dataToSend57);
+    const dataToSend58 = document.getElementById('feeder33_phaseB').textContent;
+    channel58.postMessage(dataToSend58);
+    const dataToSend59 = document.getElementById('feeder33_phaseC').textContent;
+    channel59.postMessage(dataToSend59);
+    const dataToSend60 = document.getElementById('feeder33_Total').textContent;
+    channel60.postMessage(dataToSend60);
+
+    const dataToSend61 = document.getElementById('feeder34_phaseA').textContent;
+    channel61.postMessage(dataToSend61);
+    const dataToSend62 = document.getElementById('feeder34_phaseB').textContent;
+    channel62.postMessage(dataToSend62);
+    const dataToSend63 = document.getElementById('feeder34_phaseC').textContent;
+    channel63.postMessage(dataToSend63);
+
+    const dataToSend64 = document.getElementById('feeder35_phaseA').textContent;
+    channel64.postMessage(dataToSend64);
+    const dataToSend65 = document.getElementById('feeder35_phaseB').textContent;
+    channel65.postMessage(dataToSend65);
+    const dataToSend66 = document.getElementById('feeder35_phaseC').textContent;
+    channel66.postMessage(dataToSend66);
+    const dataToSend67 = document.getElementById('feeder35_Total').textContent;
+    channel67.postMessage(dataToSend67);
+
+    const dataToSend68 = document.getElementById('feeder36_phaseA').textContent;
+    channel68.postMessage(dataToSend68);
+    const dataToSend69 = document.getElementById('feeder36_phaseB').textContent;
+    channel69.postMessage(dataToSend69);
+    const dataToSend70 = document.getElementById('feeder36_phaseC').textContent;
+    channel70.postMessage(dataToSend70);
+
+    const dataToSend71 = document.getElementById('feeder37_Total').textContent;
+    channel71.postMessage(dataToSend71);
+
+    const dataToSend72 = document.getElementById('feeder38_Total').textContent;
+    channel72.postMessage(dataToSend72);
+}
+
+
+  // ----FEEDER 4
+  const channel73 = new BroadcastChannel('dataChannel73');
+  const channel74 = new BroadcastChannel('dataChannel74');
+  const channel75 = new BroadcastChannel('dataChannel75');
+  const channel76 = new BroadcastChannel('dataChannel76');
+
+  const channel77 = new BroadcastChannel('dataChannel77');
+  const channel78 = new BroadcastChannel('dataChannel78');
+  const channel79 = new BroadcastChannel('dataChannel79');
+  const channel80 = new BroadcastChannel('dataChannel80');
+
+  const channel81 = new BroadcastChannel('dataChannel81');
+  const channel82 = new BroadcastChannel('dataChannel82');
+  const channel83 = new BroadcastChannel('dataChannel83');
+  const channel84 = new BroadcastChannel('dataChannel84');
+
+  const channel85 = new BroadcastChannel('dataChannel85');
+  const channel86 = new BroadcastChannel('dataChannel86');
+  const channel87 = new BroadcastChannel('dataChannel87');
+
+  const channel88 = new BroadcastChannel('dataChannel88');
+  const channel89 = new BroadcastChannel('dataChannel89');
+  const channel90 = new BroadcastChannel('dataChannel90');
+  const channel91 = new BroadcastChannel('dataChannel91');
+
+  const channel92 = new BroadcastChannel('dataChannel92');
+  const channel93 = new BroadcastChannel('dataChannel93');
+  const channel94 = new BroadcastChannel('dataChannel94');
+
+  const channel95 = new BroadcastChannel('dataChannel95');
+
+  const channel96 = new BroadcastChannel('dataChannel96');
+
+
+  function sendData4() {
+    const dataToSend73 = document.getElementById('feeder41_phaseA').textContent;
+    // Send the data to other browsing contexts
+    channel73.postMessage(dataToSend73);
+    const dataToSend74 = document.getElementById('feeder41_phaseB').textContent;
+    channel74.postMessage(dataToSend74);
+    const dataToSend75 = document.getElementById('feeder41_phaseC').textContent;
+    channel75.postMessage(dataToSend75);
+    const dataToSend76 = document.getElementById('feeder41_Total').textContent;
+    channel76.postMessage(dataToSend76);
+
+    const dataToSend77 = document.getElementById('feeder42_phaseA').textContent;
+    channel77.postMessage(dataToSend77);
+    const dataToSend78 = document.getElementById('feeder42_phaseB').textContent;
+    channel78.postMessage(dataToSend78);
+    const dataToSend79 = document.getElementById('feeder42_phaseC').textContent;
+    channel79.postMessage(dataToSend79);
+    const dataToSend80 = document.getElementById('feeder42_Total').textContent;
+    channel80.postMessage(dataToSend80);
+
+    const dataToSend81 = document.getElementById('feeder43_phaseA').textContent;
+    channel81.postMessage(dataToSend81);
+    const dataToSend82 = document.getElementById('feeder43_phaseB').textContent;
+    channel82.postMessage(dataToSend82);
+    const dataToSend83 = document.getElementById('feeder43_phaseC').textContent;
+    channel83.postMessage(dataToSend83);
+    const dataToSend84 = document.getElementById('feeder43_Total').textContent;
+    channel84.postMessage(dataToSend84);
+
+    const dataToSend85 = document.getElementById('feeder44_phaseA').textContent;
+    channel85.postMessage(dataToSend85);
+    const dataToSend86 = document.getElementById('feeder44_phaseB').textContent;
+    channel86.postMessage(dataToSend86);
+    const dataToSend87 = document.getElementById('feeder44_phaseC').textContent;
+    channel87.postMessage(dataToSend87);
+
+    const dataToSend88 = document.getElementById('feeder45_phaseA').textContent;
+    channel88.postMessage(dataToSend88);
+    const dataToSend89 = document.getElementById('feeder45_phaseB').textContent;
+    channel89.postMessage(dataToSend89);
+    const dataToSend90 = document.getElementById('feeder45_phaseC').textContent;
+    channel90.postMessage(dataToSend90);
+    const dataToSend91 = document.getElementById('feeder45_Total').textContent;
+    channel91.postMessage(dataToSend91);
+
+    const dataToSend92 = document.getElementById('feeder46_phaseA').textContent;
+    channel92.postMessage(dataToSend92);
+    const dataToSend93 = document.getElementById('feeder46_phaseB').textContent;
+    channel93.postMessage(dataToSend93);
+    const dataToSend94 = document.getElementById('feeder46_phaseC').textContent;
+    channel94.postMessage(dataToSend94);
+
+    const dataToSend95 = document.getElementById('feeder47_Total').textContent;
+    channel95.postMessage(dataToSend95);
+
+    const dataToSend96 = document.getElementById('feeder48_Total').textContent;
+    channel96.postMessage(dataToSend96);
+}
+
+
 
